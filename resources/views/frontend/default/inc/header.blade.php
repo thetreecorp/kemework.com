@@ -66,40 +66,111 @@
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
+  background-color: white;
   min-width: 360px;
   min-height: 350px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
 
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
+/*.dropdown-content a {*/
+/*  color: black;*/
+/*  padding: 12px 16px;*/
+/*  text-decoration: none;*/
+/*  display: block;*/
+/*}*/
+
+.profesonal_btn{
+    color: oldlace;
+    border-radius: 1%;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    padding: 7px 10px;
+    background: red;
+    text-decoration: none;
+    display: block;
+    text-align: center;
 }
 
-.dropdown-content a:hover {background-color: #ddd;}
+.profesonal_btn:hover{
+    color: white;
+    background:linear-gradient(to bottom, #a80404 5%, #b00808 100%);
+    background-color: #860202;
+}
+
+.company_btn{
+    margin-top: 1rem;
+    margin-right: 1rem;
+    box-shadow:inset 0px 1px 0px 0px #ffffff;
+    background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+    background-color:#ffffff;
+    border-radius:1px;
+    border:1px solid #dcdcdc;
+    display:inline-block;
+    cursor:pointer;
+    color:red;
+    font-weight:bold;
+    padding: 7px 25px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #ffffff;
+}
+
+.company_btn:hover{
+    color: red;
+}
+
+
 
 .dropdown:hover .dropdown-content {display: block;}
 
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
-                                    </style> 
+.hire_image{
+    height: 250px;
+
+}
+                                    </style>
 
                                     <div class="dropdown">
                                     <li class="nav-item ml-xl-3" style="list-style-type:none;">
                                         <button class="btn btn-primary rounded-1">Users</button>
                                         <div class="dropdown-content">
-                                            
-                                            <a href="http://kemework.com/search?keyword=&type=freelancer">Profesonal</a>
-                                            <a href="http://kemework.com/search?keyword=&type=agent">Agent</a>
-                                            <img src="public/uploads/images/img-menu-hire.b6008fba.png'" alt="">
-</div>
-                                    </li>       
-                                       
+
+
+                                            <div class="row">
+                                                <div class="col">
+                                                    <a class="profesonal_btn" href="http://kemework.com/search?keyword=&type=freelancer">Profesonal</a>
+                                                </div>
+                                                <div class="col">
+                                                    <a class="company_btn" href="http://kemework.com/search?keyword=&type=agent">Finishing Company</a>
+                                                </div>
+                                            </div>
+                                            @php
+                                                $cata = \App\Models\ProjectCategory::all();
+                                            @endphp
+                                            <ul>
+
+                                                    <div class="row row justify-content-center">
+                                                        <div class="col-12">
+                                                            <div class="row">
+                                                                @foreach($cata as $catagory)
+                                                                    <ul class="col-sm-3 list-unstyled">
+                                                                        <li class="subcat-li"><a href="">{{ $catagory->name }}</a></li>
+                                                                    </ul>
+                                                                @endforeach
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                            </ul>
+
+
+
+
+                                            <img class="hire_image"  src="public/uploads/images/img-menu-hire.b6008fba.png" alt="">
+                                        </div>
+                                    </li>
+
                                     </div>
-<!-- 
+<!--
                                     <ul>
                                     <li class="nav-item ml-xl-3" style="list-style-type:none;">
                                         <a class="btn btn-primary rounded-1" href="http://kemework.com/search?keyword=&type=freelancer">{{ translate(' Professional') }}</a>
@@ -109,7 +180,7 @@
                                     </li>
                                     </ul> -->
 
-                                   
+
                                     </div>
                                 </div>
                             </form>
@@ -144,7 +215,7 @@
                                                     <path id="Path_25813" data-name="Path 25813" d="M10,310.65a1,1,0,0,0,0,2h4a1,1,0,0,0,0-2Z" fill="#5a6780"/>
                                                 </g>
                                             </svg>
-                                                
+
                                             @php $noti_num = \App\Utility\NotificationUtility::get_my_notifications(10,true,true); @endphp
                                             @if($noti_num != 0)
                                                 <span class="badge badge-circle badge-primary position-absolute absolute-top-right">
@@ -152,7 +223,7 @@
                                                     {{  $noti_num }}
                                                 </span>
                                             @endif
-    
+
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated dropdown-menu-lg py-0">
                                             <div class="p-3 bg-light border-bottom">
@@ -216,7 +287,7 @@
                                             <div class="p-3 bg-light border-bottom">
                                                 <h6 class="mb-0">{{ translate('Messages') }}</h6>
                                             </div>
-    
+
                                             <div class="c-scrollbar-light" style="overflow-y:auto;max-height:300px;">
                                                 @forelse ($unseen_chat_threads as $key => $chat_thread_id)
                                                     @php
@@ -318,7 +389,7 @@
                                     </li>
                                 @endif
 
-                                
+
                             </ul>
                         </nav>
                     </div>
@@ -394,7 +465,7 @@
                                               <path id="Path_25813" data-name="Path 25813" d="M10,310.65a1,1,0,0,0,0,2h4a1,1,0,0,0,0-2Z" fill="#5a6780"/>
                                             </g>
                                         </svg>
-                                          
+
                                         @php $noti_num = \App\Utility\NotificationUtility::get_my_notifications(10,true,true); @endphp
                                         @if($noti_num != 0)
                                             <span class="badge badge-circle badge-primary position-absolute absolute-top-right">

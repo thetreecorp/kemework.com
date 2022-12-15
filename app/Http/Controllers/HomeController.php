@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ProjectCategory;
 use Illuminate\Http\Request;
 use Auth;
 use App\Models\User;
@@ -35,6 +36,8 @@ class HomeController extends Controller
      */
     public function index()
     {
+
+
         return view('frontend.default.index');
     }
 
@@ -90,10 +93,10 @@ class HomeController extends Controller
     public function project_details($slug)
     {
         $project = Project::where('slug', $slug)->first();
-       
+
         $country = Country::where('id',$project->country_id)->select('name')->first()->name;
         $city = City::where('id',$project->city_id)->select('name')->first()->name;
-       
+
         return view('frontend.default.project-single', compact('project','country','city'));
     }
 
@@ -118,7 +121,7 @@ class HomeController extends Controller
     public function all_projects(Request $request)
     {
         $projects = Project::biddable()->notcancel()->where('private', '0')->latest();
-    
+
         $keyword = null;
         if($request->has('keyword')){
             $keyword = $request->keyword;
@@ -131,7 +134,7 @@ class HomeController extends Controller
 
 
 
-   
+
 
     // public function all_projects(){
     //     $projects = Project::biddable()->notcancel()->where('private', '0')->latest();
@@ -161,7 +164,7 @@ class HomeController extends Controller
         $total_freelancers = UserProfile::where('user_role_id', '2')->get();
 
         dd($total_freelancers);
-      
+
         return view('frontend.default.profesonal', compact('freelancers',
         'total_freelancers'));
     }
@@ -304,6 +307,6 @@ class HomeController extends Controller
 
 
 
-    
+
 
 }
