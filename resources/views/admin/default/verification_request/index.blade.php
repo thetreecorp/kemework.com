@@ -53,10 +53,16 @@
                                     </td>
                                 @endif
                                 <td>
+                                    @php
+                                    if($user->user_type == "freelancer"){
+                                        $user->user_type = "Professionals";
+                                        }else if($user->user_type == "agent")
+                                             $user->user_type = "Companies";
+                                @endphp
                                     {{$user->user_type}}
                                 </td>
                                 @php
-                                    $verification = \App\Models\Verification::where('user_id', $user->id)->first();                                    
+                                    $verification = \App\Models\Verification::where('user_id', $user->id)->first();
                                 @endphp
                                 <td>
                                     @if ($verification != null && $verification->verified != 0)

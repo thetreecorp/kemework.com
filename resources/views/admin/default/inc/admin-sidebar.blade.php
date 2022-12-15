@@ -136,7 +136,7 @@
                 </li>
                 @endcan
 
-                
+
                 @can('show user chats')
                 <li class="aiz-side-nav-item">
                     <a href="{{ route('skills.index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['skills.index', 'chat_details_for_admin'])}}">
@@ -161,7 +161,7 @@
                 <li class="aiz-side-nav-item">
                     <a href="{{ route('all_freelancers') }}" class="aiz-side-nav-link {{ areActiveRoutes(['all_freelancers', 'chat_details_for_admin'])}}">
                         <i class="las la-user-tie aiz-side-nav-icon"></i>
-                     
+
                         <span class="aiz-side-nav-text">{{translate('Profesonal')}}</span>
                     </a>
                 </li>
@@ -172,16 +172,16 @@
                 <li class="aiz-side-nav-item">
                     <a href="{{ route('all_agents') }}" class="aiz-side-nav-link {{ areActiveRoutes(['all_agents', 'chat_details_for_admin'])}}">
                         <i class="las la-building aiz-side-nav-icon"></i>
-                
-                        <span class="aiz-side-nav-text">{{translate('Agent')}}</span>
+
+                        <span class="aiz-side-nav-text">{{translate('Companies')}}</span>
                     </a>
                 </li>
                 @endcan
 
-                
-                
 
-              
+
+
+
 
                 <!-- @if(auth()->user()->can('show all freelancers')
                         || auth()->user()->can('show freelancer packages')
@@ -202,7 +202,7 @@
                             </li>
                             @endcan -->
 
-                            
+
 
                             <!-- @can('show freelancer packages')
                             <li class="aiz-side-nav-item">
@@ -277,7 +277,7 @@
 
 
 
-                
+
                 @if(auth()->user()->can('show all clients') || auth()->user()->can('show client packages') || auth()->user()->can('show client badges'))
                     <li class="aiz-side-nav-item">
                         <a href="#" class="aiz-side-nav-link">
@@ -402,7 +402,7 @@
                         </li>
                     @endif
                 @endif
-                        
+
                 @if(auth()->user()->can('show project payments')
                     || auth()->user()->can('show package payments')
                         || auth()->user()->can('show service payments')
@@ -466,7 +466,7 @@
                         </ul>
                     </li>
                 @endif
-                
+
                 @if(auth()->user()->can('show all blogs') || auth()->user()->can('show blog category'))
                     <li class="aiz-side-nav-item">
                         <a href="#" class="aiz-side-nav-link">
@@ -518,7 +518,7 @@
                         </ul>
                     </li>
                 @endif
-                
+
                 @if(auth()->user()->can('show header') || auth()->user()->can('show footer') || auth()->user()->can('show pages') || auth()->user()->can('show apperance'))
                     <li class="aiz-side-nav-item">
                         <a href="#" class="aiz-side-nav-link">
@@ -587,7 +587,7 @@
                         </ul>
                     </li>
                 @endif
-                @if(auth()->user()->can('show general setting') 
+                @if(auth()->user()->can('show general setting')
                         || auth()->user()->can('show activation setting')
                             || auth()->user()->can('show system languages setting')
                                 || auth()->user()->can('show system currency setting')
@@ -699,7 +699,7 @@
 
                 <!-- Offline Payment Addon-->
                 @if (\App\Addon::where('unique_identifier', 'offline_payment')->first() != null && \App\Addon::where('unique_identifier', 'offline_payment')->first()->activated)
-                    @if(auth()->user()->can('show manual payment methods') 
+                    @if(auth()->user()->can('show manual payment methods')
                         || auth()->user()->can('show offline project payments')
                             || auth()->user()->can('show offline package payments')
                                 || auth()->user()->can('show offline service payments'))
@@ -755,7 +755,7 @@
                 </li>
                 @endcan
 
-                @if(auth()->user()->can('system update') 
+                @if(auth()->user()->can('system update')
                         || auth()->user()->can('show server status'))
                     <li class="aiz-side-nav-item">
                         <a href="#" class="aiz-side-nav-link">

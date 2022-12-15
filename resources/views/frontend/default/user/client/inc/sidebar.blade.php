@@ -66,6 +66,12 @@
                     </a>
                     <ul class="aiz-side-nav-list level-2">
                         <li class="aiz-side-nav-item">
+                            <a href="http://kemework.com/search?keyword=&type=service" class="aiz-side-nav-link">
+                                <span class="aiz-side-nav-text">{{ translate('Find Services') }}</span>
+                            </a>
+                        </li>
+
+                        <li class="aiz-side-nav-item">
                             <a href="{{ route('client.purchased.services') }}" class="aiz-side-nav-link {{ areActiveRoutes(['client.purchased.services'])}}">
                                 <span class="aiz-side-nav-text">{{ translate('Purchased Services') }}</span>
                             </a>
@@ -98,6 +104,19 @@
                     </a>
                     <ul class="aiz-side-nav-list level-2">
                         <li class="aiz-side-nav-item">
+                            <a href="http://kemework.com/projects/create" class="aiz-side-nav-link {{ areActiveRoutes(['projects.index', 'projects.create','projects.edit'])}}">
+                                <span class="aiz-side-nav-text">{{ translate('Create Tasks') }}</span>
+                            </a>
+                        </li>
+
+                        <li class="aiz-side-nav-item">
+                            <a href="{{ route('projects.index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['projects.index', 'projects.create','projects.edit'])}}">
+                                <span class="aiz-side-nav-text">{{ translate('All Tasks') }}</span>
+                            </a>
+                        </li>
+
+
+                        <li class="aiz-side-nav-item">
                             <a href="{{ route('projects.index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['projects.index', 'projects.create','projects.edit'])}}">
                                 <span class="aiz-side-nav-text">{{ translate('All Tasks') }}</span>
                             </a>
@@ -124,17 +143,61 @@
                         </li>
                     </ul>
                 </li>
-                @if (Auth::user()->userPackage != null && Auth::user()->userPackage->following_status)
+
+
+
+
+
+
                 <li class="aiz-side-nav-item">
-                    <a href="{{ route('bookmarked-freelancers.index') }}" class="aiz-side-nav-link d-flex align-items-center {{ areActiveRoutes(['bookmarked-freelancers.index'])}}">
+                    <a href="" class="aiz-side-nav-link d-flex align-items-center">
                         {{-- <i class="las la-user aiz-side-nav-icon"></i> --}}
                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
                             <path id="Path_25822" data-name="Path 25822" d="M12.815,2H3.185A1.175,1.175,0,0,0,2,3.166v8.162a1.179,1.179,0,0,0,1.185,1.166H6.222l1.357,1.335a.6.6,0,0,0,.836,0l1.363-1.335h3.037A1.179,1.179,0,0,0,14,11.328V3.166A1.179,1.179,0,0,0,12.815,2ZM8,3.924A1.574,1.574,0,1,1,6.4,5.5,1.588,1.588,0,0,1,8,3.924Zm2.806,6.238H5.194V9.638C5.194,8.472,6.815,7.83,8,7.83s2.806.641,2.806,1.807Z" transform="translate(-2 -2)" fill="#989ea8"/>
                         </svg>
-                        <span class="aiz-side-nav-text ml-2">{{ translate('Bookmarked Freelancers') }}</span>
+                        <span class="aiz-side-nav-text ml-2">{{ translate('Favorites') }}</span>
                     </a>
+                    <ul class="aiz-side-nav-list level-2">
+                        <li class="aiz-side-nav-item">
+                            <a href="http://kemework.com/projects/create" class="aiz-side-nav-link {{ areActiveRoutes(['projects.index', 'projects.create','projects.edit'])}}">
+                                <span class="aiz-side-nav-text">{{ translate('Professional') }}</span>
+                            </a>
+                        </li>
+
+                        <li class="aiz-side-nav-item">
+                            <a href="{{ route('projects.index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['projects.index', 'projects.create','projects.edit'])}}">
+                                <span class="aiz-side-nav-text">{{ translate('Companies') }}</span>
+                            </a>
+                        </li>
+
+
+                        <li class="aiz-side-nav-item">
+                            <a href="{{ route('projects.index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['projects.index', 'projects.create','projects.edit'])}}">
+                                <span class="aiz-side-nav-text">{{ translate('Services') }}</span>
+                            </a>
+                        </li>
+                        <li class="aiz-side-nav-item">
+                            <a href="{{ route('projects.my_open_project') }}" class="aiz-side-nav-link {{ areActiveRoutes(['projects.my_open_project', 'call_for_interview', 'project.bids'])}}">
+                                <span class="aiz-side-nav-text">{{ translate('Tasks') }}</span>
+                            </a>
+                        </li>
+
+                    </ul>
                 </li>
-                @endif
+
+
+
+{{--                @if (Auth::user()->userPackage != null && Auth::user()->userPackage->following_status)--}}
+{{--                <li class="aiz-side-nav-item">--}}
+{{--                    <a href="{{ route('bookmarked-freelancers.index') }}" class="aiz-side-nav-link d-flex align-items-center {{ areActiveRoutes(['bookmarked-freelancers.index'])}}">--}}
+{{--                        --}}{{-- <i class="las la-user aiz-side-nav-icon"></i> --}}
+{{--                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">--}}
+{{--                            <path id="Path_25822" data-name="Path 25822" d="M12.815,2H3.185A1.175,1.175,0,0,0,2,3.166v8.162a1.179,1.179,0,0,0,1.185,1.166H6.222l1.357,1.335a.6.6,0,0,0,.836,0l1.363-1.335h3.037A1.179,1.179,0,0,0,14,11.328V3.166A1.179,1.179,0,0,0,12.815,2ZM8,3.924A1.574,1.574,0,1,1,6.4,5.5,1.588,1.588,0,0,1,8,3.924Zm2.806,6.238H5.194V9.638C5.194,8.472,6.815,7.83,8,7.83s2.806.641,2.806,1.807Z" transform="translate(-2 -2)" fill="#989ea8"/>--}}
+{{--                        </svg>--}}
+{{--                        <span class="aiz-side-nav-text ml-2">{{ translate('Bookmarked Professional') }}</span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
+{{--                @endif--}}
                 @php
                     $total_mile_request = count(\App\Models\MilestonePayment::where('client_user_id', Auth::user()->id)->where('client_seen', 0)->get());
                 @endphp

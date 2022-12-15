@@ -7,7 +7,7 @@
             <form class="" id="sort_freelancers" action="" method="GET">
                 <div class="card-header row gutters-5">
                     <div class="col text-center text-md-left">
-                        <h5 class="mb-md-0 h6">{{translate('Agent Lists')}}</h5>
+                        <h5 class="mb-md-0 h6">{{translate('Companies Lists')}}</h5>
                     </div>
                     <div class="col-md-3 ml-auto">
                         <select class="form-control aiz-selectpicker mb-2 mb-md-0" name="type" id="type" onchange="sort_freelancers()">
@@ -85,7 +85,7 @@
                                     {{single_price($freelancer->balance)}}
                                 </td>
                                 <td class="text-right">
-                                    @if ($freelancer->user != null) 
+                                    @if ($freelancer->user != null)
                                          <a class="btn btn-soft-warning btn-icon btn-circle btn-sm btn icon" href="#" title="{{translate('Add Wallet Balance')}}" onclick="show_wallet_modal({{ $freelancer->user->id }})">
                                             <i class="las la-plus"></i>
                                         </a>

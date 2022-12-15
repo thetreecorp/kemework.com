@@ -66,7 +66,7 @@
 								</div>
 								<a href="{{ route('search') }}?type=freelancer" class="text-primary fs-14 fw-700 d-flex align-items-center mb-1">
 									<i class="la la-search fs-20 fw-900 mr-2" style="transform-origin: 0 50%; transform: rotate(-90deg) translate(-50%, 50%);"></i>
-									<span>{{ translate('Freelancers') }}</span>
+									<span>{{ translate('Professionals') }}</span>
 								</a>
             				</div>
             			</div>
@@ -188,7 +188,7 @@
 							</div>
 	            		</div>
 
-						
+
 	            	</div>
 	            	<div class="col-md-4">
 	            		<div class="card rounded-2 border-gray-light">
@@ -255,11 +255,11 @@
 	            		</div>
 	            	</div>
 
-					
+
 	            </div>
 
 
-				
+
             	<div class="row gutters-15">
             		<div class="col-md-4 d-flex">
             			<div class="card rounded-2 border-gray-light w-100">
@@ -328,7 +328,7 @@
                                                 <i class="las la-times text-white"></i>
                                             </span>
                                         @endif
-                                        <span>{{ translate('Freelancer Bookmark option') }}</span>
+                                        <span>{{ translate('Professionals Bookmark option') }}</span>
                                     </li>
             					</ul>
             				</div>

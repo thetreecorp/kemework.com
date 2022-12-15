@@ -24,7 +24,7 @@
                     <div class="px-3 pt-3">
                         <div class="opacity-50">
                             <span class="fs-12 d-block">{{ translate('Total Earnings From') }}</span>
-                            {{ translate('Agent & profesonal Subscription') }}
+                            {{ translate('Companies & profesonal Subscription') }}
                         </div>
                         <div class="h3 fw-700 mb-3">{{ single_price(\App\Models\PackagePayment::freelancer()->sum('amount')) }}</div>
                     </div>
@@ -115,7 +115,7 @@
                         <h5 class="h1 fw-700">{{ count(\App\Models\User::where('user_type', 'freelancer')->where('created_at', '>', Carbon\Carbon::now()->subDays(30))->get()) }}</h5>
                     </div>
                     <div class="col-4 pt-3 mb-3">
-                        <span class="mb-2 d-block fs-13 opacity-60">{{ translate('New Agent') }}</span>
+                        <span class="mb-2 d-block fs-13 opacity-60">{{ translate('New Companies') }}</span>
                         <h5 class="h1 fw-700">{{ count(\App\Models\User::where('user_type', 'agent')->where('created_at', '>', Carbon\Carbon::now()->subDays(30))->get()) }}</h5>
                     </div>
                     <div class="col-6 pt-3 mb-3">
@@ -292,7 +292,7 @@
                 {
                     fill: false,
                     borderColor: '#377dff',
-                    label: '{{translate('Profesonal  Agent Package')}}',
+                    label: '{{translate('Profesonal & Companies Package')}}',
                     data: [
                         {{ \App\Models\PackagePayment::where('package_type', 'freelancer')->whereMonth('created_at', '=', '01')->whereYear('created_at', '=', date('Y'))->sum('amount') }},
                         {{ \App\Models\PackagePayment::where('package_type', 'freelancer')->whereMonth('created_at', '=', '02')->whereYear('created_at', '=', date('Y'))->sum('amount') }},

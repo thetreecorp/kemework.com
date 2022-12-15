@@ -42,7 +42,7 @@
                                         </button>
 
                                         <li class="nav-item ml-xl-3" style="list-style-type:none;">
-                                        <a class="btn btn-primary rounded-1" href="{{ route('task.list') }}">{{ translate(' Task') }}</a>
+                                        <a class="btn btn-primary rounded-1" href="http://kemework.com/search?keyword=&type=project">{{ translate(' Task') }}</a>
                                     </li>
 
                                     <li class="nav-item ml-xl-3" style="list-style-type:none;">
@@ -67,8 +67,8 @@
   display: none;
   position: absolute;
   background-color: white;
-  min-width: 360px;
-  min-height: 350px;
+  min-width: 600px;
+  min-height: 600px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
@@ -151,6 +151,7 @@
                                                     <div class="row row justify-content-center">
                                                         <div class="col-12">
                                                             <div class="row">
+                                                                <br>
                                                                 @foreach($cata as $catagory)
                                                                     <ul class="col-sm-3 list-unstyled">
                                                                         <li class="subcat-li"><a href="">{{ $catagory->name }}</a></li>
