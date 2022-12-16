@@ -24,8 +24,7 @@ trait CommonFunctionTrait
            // JWT::$leeway += 1;    
           //  $tokenPayload = JWT::decode($oritoken, new Key(config('jwt.secret'), 'HS256'));
 		 	$tokenPayload = JWT::decode($oritoken, new Key($key, 'HS256'));
-			print_r($tokenPayload);
-			die('eeee');
+		
 			if($tokenPayload->role != 'common user'){
 				return false;
 			}
