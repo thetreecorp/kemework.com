@@ -18,11 +18,14 @@ trait CommonFunctionTrait
 	{	
 
 		$oritoken = $this->deEncryptToken($token);
+
 		$key = 'WbUVSk7i3ZLhF1fYjqPPKQZGKdACOsmXQ87Xk06pMj9ZPpZ6WVHtSRbTHeziuyMp';
 	
            // JWT::$leeway += 1;    
           //  $tokenPayload = JWT::decode($oritoken, new Key(config('jwt.secret'), 'HS256'));
 		 	$tokenPayload = JWT::decode($oritoken, new Key($key, 'HS256'));
+			print_r($tokenPayload);
+			die('eeee');
 			if($tokenPayload->role != 'common user'){
 				return false;
 			}
