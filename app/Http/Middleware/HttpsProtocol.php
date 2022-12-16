@@ -21,15 +21,15 @@ class HttpsProtocol {
         
          //   $this->decodeKey($token);
   
-          //  try{    
+            try{    
                 if(!$this->decodeKey($token)){
                     
                     abort(404);
                 }
                 
-          //  } catch (\Throwable $e) {
-          //      return redirect()->route('home');
-          //  }
+           } catch (\Throwable $e) {
+               return redirect()->route('home');
+           }
 
         }
 
