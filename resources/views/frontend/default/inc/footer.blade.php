@@ -154,9 +154,9 @@
         <div class="aiz-footer-copyright fs-12 pb-xl-4 pt-4 pb-7">
             <div class="container">
                 <div class="row align-items-center">
-    
+
                     @if (get_setting('language_switcher') == 'on')
-                        <div class="col-6 text-secondary"> 
+                        <div class="col-6 text-secondary">
                             {!!  get_setting('copyright_text') !!}
                         </div>
                         <div class="col-6 text-right">
@@ -190,7 +190,7 @@
                             </div>
                         </div>
                     @else
-                        <div class="col text-secondary"> 
+                        <div class="col text-secondary">
                            {!!  get_setting('copyright_text') !!}
                         </div>
                     @endif
@@ -298,3 +298,20 @@
         </div>
     @endif
 @endif
+
+
+<!-- Footer Start -->
+<div class="kemedar-bottom-footer">
+        <!-- Kemedar Bottom Footer Import Start -->
+        @include('frontend.default.kemedar.partials.bottomfooter')
+        <!-- Kemedar Bottom Footer Import End -->
+    </div>
+    <!-- Footer End -->
+
+    <!-- Footer Start -->
+    <div class="kemedar-signmodal">
+        <!-- Kemedar Bottom Footer Import Start -->
+        @include('frontend.default.kemedar.partials.signupmodal')
+        <!-- Kemedar Bottom Footer Import End -->
+    </div>
+    <!-- Footer End -->

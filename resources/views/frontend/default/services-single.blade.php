@@ -131,6 +131,21 @@
                                                 >
                                                 {{ translate('Continue') }} ({{ single_price($service_package->service_price) }})
                                             </button>
+                                            <br>
+
+                                            <div class="mb-3">
+
+{{--                                                    <a class="btn btn-block btn-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1 confirm-alert" href="javascript:void(0)" data-target="#bookmark-remove-modal">--}}
+{{--                                                        <i class="las la-bookmark fs-16 fw-700"></i>--}}
+{{--                                                        <span>{{ translate('Remove Bookmark') }}</span>--}}
+{{--                                                    </a>--}}
+
+                                                    <a class="btn btn-block btn-outline-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1" href="{{route('bookmarked-service.store',$service->id)}}">
+                                                        <i class="las la-bookmark fs-16 fw-700"></i>
+                                                        <span class="ml-2">{{ translate('Bookmark Project') }}</span>
+                                                    </a>
+
+                                            </div>
                                         @elseif (auth::check())
                                             <div class="alert alert-warning rounded-1 mt-4">
                                                 {{ translate('You need be a client to order services') }}
@@ -231,7 +246,7 @@
 
                                 </div>
                             </div>
-                            
+
                             <div class="m-3 px-3">
                                 <h6 class="text-left mb-2 fs-14 fw-700"><span class="bg-white pr-3">{{ translate('Share Service') }}</span></h6>
                                 <div class="aiz-share"></div>
@@ -271,7 +286,7 @@
                                                     <a href="{{ route('freelancer.details', $similar_type_sevice->user->user_name) }}" class="text-secondary fs-14"><span class="font-weight-bold">{{ $similar_type_sevice->user->name }}</span></a>
                                                 </span>
                                             </div>
-                                            
+
                                             <a href="{{ route('service.show', $similar_type_sevice->slug) }}" class="text-dark">
                                                 <h5 class="card-title fs-16 fw-700">{{ \Illuminate\Support\Str::limit($similar_type_sevice->title, 45, $end='...') }}</h5>
                                             </a>

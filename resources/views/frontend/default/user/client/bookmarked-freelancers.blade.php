@@ -6,11 +6,12 @@
         <div class="d-flex align-items-start">
             @include('frontend.default.user.client.inc.sidebar')
             <div class="aiz-user-panel">
-                <h6 class="mb-4 fs-16 fw-700">{{ translate('Bookmarked Freelancers') }}</h6>
+                <h6 class="mb-4 fs-16 fw-700">{{ translate('Favorite Profesonal') }}</h6>
 
                 <div class="row gutters-10">
                     @forelse ($bookmarked_freelancers as $key => $bookmarked_freelancer)
-                        @if ($bookmarked_freelancer->freelancer != null)
+
+                        @if ($bookmarked_freelancer->freelancer != null and $bookmarked_freelancer->freelancer->user_type == 'freelancer')
                             <div class="col-lg-4 col-md-6">
                                 <div class="card rounded-2 border-gray-light">
                                     <div class="absolute-top-right p-2">

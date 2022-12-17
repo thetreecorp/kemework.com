@@ -125,7 +125,7 @@ Route::group(['middleware' => ['user', 'verified', 'packagePurchased']], functio
 
 
 	Route::get('/get/citys','HomeController@getCity')->name('getCity');
-	
+
 
 });
 
@@ -146,12 +146,18 @@ Route::group(['middleware' => ['auth','verified', 'client', 'packagePurchased']]
 	Route::get('/project-done/{id}', 'ProjectController@project_done')->name('projects.complete');
 
     Route::resource('bookmarked-freelancers', 'BookmarkedFreelancerController');
+    Route::get('/favirite/agent', 'BookmarkedFreelancerController@agent')->name('favorite.agent');
+
+
+
+
     Route::get('/bookmarked-freelancers/store/{id}', 'BookmarkedFreelancerController@store')->name('bookmarked-freelancers.store');
 	Route::get('/bookmarked-freelancers/destroy/{id}', 'BookmarkedFreelancerController@destroy')->name('bookmarked-freelancers.destroy');
 	Route::get('/client/purchased-services', 'ServiceController@client_purchased_services')->name('client.purchased.services');
 
 
     Route::get('/service/{id}/cancel', 'ServiceController@cancel_service')->name('services.cancel');
+
 	Route::post('/service/cancel/store', 'ServiceController@cancel_service_store')->name('services.cancel.store');
 
 	Route::get('/client/cancel-requests-services', 'ServiceController@client_cancel_requested_services')->name('client.services.cancel.requests');
@@ -212,6 +218,9 @@ Route::group(['middleware' => ['auth', 'verified', 'freelancer', 'packagePurchas
 
     Route::resource('bookmarked-projects', 'BookmarkedProjectController');
     Route::get('/bookmarked-projects/store/{id}', 'BookmarkedProjectController@store')->name('bookmarked-projects.store');
+
+    Route::get('/bookmarked-service/store/{id}', 'BookmarkedProjectController@service')->name('bookmarked-service.store');
+
     Route::get('/bookmarked-projects/destroy/{id}', 'BookmarkedProjectController@destroy')->name('bookmarked-projects.destroy');
 
     Route::get('/following-clients', 'BookmarkedClientController@index')->name('bookmarked-clients.index');
@@ -272,6 +281,16 @@ Route::group(['middleware' => ['auth', 'verified', 'agent', 'packagePurchased']]
     Route::resource('bookmarked-projects', 'BookmarkedProjectController');
     Route::get('/bookmarked-projects/store/{id}', 'BookmarkedProjectController@store')->name('bookmarked-projects.store');
     Route::get('/bookmarked-projects/destroy/{id}', 'BookmarkedProjectController@destroy')->name('bookmarked-projects.destroy');
+
+
+    Route::get('/client/bookmarked-projects/store/{id}', 'BookmarkedProjectController@store')->name('client.bookmarked-projects.store');
+    Route::get('/client/bookmarked-projects/destroy/{id}', 'BookmarkedProjectController@destroy')->name('client.bookmarked-projects.destroy');
+
+
+
+    Route::get('/favirite/task', 'BookmarkedProjectController@client_task')->name('client.favorite.task');
+
+
 
     Route::get('/following-clients', 'BookmarkedClientController@index')->name('bookmarked-clients.index');
     Route::get('/following-clients/store/{id}', 'BookmarkedClientController@store')->name('bookmarked-clients.store');

@@ -141,7 +141,7 @@
                                             <span>{{ translate('Remove Bookmark') }}</span>
                                         </a>
                                     @else
-                                        <a class="btn btn-block btn-outline-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1" href="{{ route('bookmarked-projects.store', encrypt($project->id)) }}">
+                                        <a class="btn btn-block btn-outline-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1" href="{{ route('bookmarked-projects.store', $project->id)}}">
                                             <i class="las la-bookmark fs-16 fw-700"></i>
                                             <span class="ml-2">{{ translate('Bookmark Project') }}</span>
                                         </a>
@@ -170,7 +170,7 @@
                                         @endif
                                     @endif
                                 </div>
-                             
+
 								<div>
 									<h6 class="mb-3"><span class="fs-12 text-secondary">{{ translate('About This Client') }}</span></h6>
                                     <a href="{{ route('client.details',$project->client->user_name) }}" class="text-inherit">

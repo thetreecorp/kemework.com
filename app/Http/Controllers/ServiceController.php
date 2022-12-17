@@ -225,7 +225,7 @@ class ServiceController extends Controller
             }
             else{
                 flash(translate('You do not have enough wallet balance.'))->error();
-                return back(); 
+                return back();
             }
         }
     }

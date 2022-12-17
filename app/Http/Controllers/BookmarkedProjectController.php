@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\BookmarkedProject;
 use Auth;
 
+
 class BookmarkedProjectController extends Controller
 {
     /**
@@ -17,6 +18,13 @@ class BookmarkedProjectController extends Controller
     {
         $bookmarked_projects = BookmarkedProject::where('user_id', Auth::user()->id)->paginate(8);
         return view('frontend.default.user.freelancer.bookmarked-projects', compact('bookmarked_projects'));
+    }
+
+
+    public function client_task()
+    {
+        $bookmarked_projects = BookmarkedProject::where('user_id', Auth::user()->id)->paginate(8);
+        return view('frontend.default.user.client.bookmarked-task', compact('bookmarked_projects'));
     }
 
     /**
@@ -41,7 +49,7 @@ class BookmarkedProjectController extends Controller
         if($userPackage->bookmark_project_limit > count(BookmarkedProject::where('user_id', Auth::user()->id)->get())){
             $bookmarked_project = new BookmarkedProject;
             $bookmarked_project->user_id = Auth::user()->id;
-            $bookmarked_project->project_id = decrypt($id);
+            $bookmarked_project->project_id =$id;
             $bookmarked_project->save();
 
             $userPackage->bookmark_project_limit--;
@@ -52,6 +60,11 @@ class BookmarkedProjectController extends Controller
         }
 
         return back();
+    }
+
+    public function service($id)
+    {
+        dd($id);
     }
 
     /**

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\BookmarkedFreelancer;
 use Auth;
+use Illuminate\Support\Facades\DB;
 
 class BookmarkedFreelancerController extends Controller
 {
@@ -16,7 +17,21 @@ class BookmarkedFreelancerController extends Controller
     public function index()
     {
         $bookmarked_freelancers = BookmarkedFreelancer::where('user_id', Auth::user()->id)->paginate(8);
+//        $bookmarked_freelancers  =  DB::table('users')
+//            ->join('bookmarked_freelancers', 'users.id', '=', 'bookmarked_freelancers.freelancer_user_id')
+//            ->where('users.user_type' ,'=','freelancer')
+//            ->get();
         return view('frontend.default.user.client.bookmarked-freelancers', compact('bookmarked_freelancers'));
+    }
+
+    public function agent()
+    {
+        $bookmarked_freelancers = BookmarkedFreelancer::where('user_id', Auth::user()->id)->paginate(8);
+//        $bookmarked_freelancers  =  DB::table('users')
+//            ->join('bookmarked_freelancers', 'users.id', '=', 'bookmarked_freelancers.freelancer_user_id')
+//            ->where('users.user_type' ,'=','freelancer')
+//            ->get();
+        return view('frontend.default.user.client.bookmarked-company', compact('bookmarked_freelancers'));
     }
 
     /**
