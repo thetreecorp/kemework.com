@@ -182,17 +182,19 @@ function translate($key, $lang = null){
         $lang = App::getLocale();
     }
 
-    $translation_def = Translation::where('lang', env('DEFAULT_LANGUAGE', 'en'))->where('lang_key', $key)->first();
+    $lang_key = preg_replace('/[^A-Za-z0-9\_]/', '', str_replace(' ', '_', strtolower($key)));
+
+    $translation_def = Translation::where('lang', env('DEFAULT_LANGUAGE', 'en'))->where('lang_key', $lang_key)->first();
     if($translation_def == null){
         $translation_def = new Translation;
         $translation_def->lang = env('DEFAULT_LANGUAGE', 'en');
-        $translation_def->lang_key = $key;
+        $translation_def->lang_key = $lang_key;
         $translation_def->lang_value = $key;
         $translation_def->save();
     }
 
     //Check for session lang
-    $translation_locale = Translation::where('lang_key', $key)->where('lang', $lang)->first();
+    $translation_locale = Translation::where('lang_key', $lang_key)->where('lang', $lang)->first();
     if($translation_locale != null){
         return $translation_locale->lang_value;
     }

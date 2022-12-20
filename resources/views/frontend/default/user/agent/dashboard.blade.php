@@ -37,7 +37,7 @@
 									<path id="Path_25869" data-name="Path 25869" d="M85,68.98a9.079,9.079,0,0,1-9.13,9.026H10.13A9.079,9.079,0,0,1,1,68.98V16.631A7.263,7.263,0,0,1,8.3,9.411H45.138l14.789-5.3a1.814,1.814,0,0,1,2.315,1.063L63.8,9.411h6.59a7.263,7.263,0,0,1,7.3,7.221v3.61A7.263,7.263,0,0,1,85,27.462ZM8.3,13.021a3.611,3.611,0,1,0,0,7.221H14.94c.024-.009.038-.029.062-.038l20.054-7.183Zm53.1.327L59.464,8.069h0L55.717,9.411h.005l-10.069,3.61h-.018L25.477,20.241H63.938L61.4,13.348Zm12.64,3.284a3.631,3.631,0,0,0-3.652-3.61H65.127l2.655,7.221h6.262ZM77.7,23.852H8.3a7.286,7.286,0,0,1-3.652-1V68.98A5.447,5.447,0,0,0,10.13,74.4H75.87a5.447,5.447,0,0,0,5.478-5.415V56.344h-7.3a7.221,7.221,0,1,1,0-14.441h7.3V27.462A3.631,3.631,0,0,0,77.7,23.852Zm3.652,28.882V45.513h-7.3a3.611,3.611,0,1,0,0,7.221Zm-7.3-5.415H77.7v3.61H74.043Z" transform="translate(-2.869 39.031) rotate(-30)" fill="#fff" fill-rule="evenodd" opacity="0.5"/>
 								</svg>
 							</div>
-							  
+
 							<div class="mb-4 px-4">
 								<a href="http://localhost/workdesk/logout" class="btn btn-block btn-soft-primary-light rounded-1 py-3 fs-14 fw-700">{{ translate('Logout') }}</a>
 							</div>
@@ -135,7 +135,7 @@
 				</div>
             	<div class="row gutters-15">
             		<div class="col-md-4 mb-4">
-            			<a href="{{ route('service.freelancer_index') }}" class="btn btn-block btn-primary rounded-1 py-4">{{ translate('My Services') }}</a>
+            			<a href="{{ route('agent.service.freelancer_index') }}" class="btn btn-block btn-primary rounded-1 py-4">{{ translate('My Services') }}</a>
             		</div>
             		<div class="col-md-4 mb-4">
             			<a href="{{ route('user.profile') }}" class="btn btn-block btn-primary rounded-1 py-4">{{ translate('Profile Settings') }}</a>

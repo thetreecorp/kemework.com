@@ -6,7 +6,7 @@
         <div class="d-flex align-items-start">
             @include('frontend.default.user.freelancer.inc.sidebar')
             <div class="aiz-user-panel">
-            	<h5 class="mb-4 fs-16 fw-700">{{ translate('Bookmarked Task') }}</h5>
+            	<h5 class="mb-4 fs-16 fw-700">{{ translate('Bookmarked Projects') }}</h5>
                 <div class="row gutters-10">
                     @forelse ($bookmarked_projects as $key => $bookmarked_project)
                         @if (($project = $bookmarked_project->project) != null)

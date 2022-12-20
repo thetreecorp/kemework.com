@@ -40,7 +40,7 @@
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>
-                                            <a target="_blank" href="{{ route('service.show', $purchasedService->servicePackage->service->slug) }}">
+                                            <a target="_blank" href="{{ route('agent.service.show', $purchasedService->servicePackage->service->slug) }}">
                                             {{ \Illuminate\Support\Str::limit($purchasedService->servicePackage->service->title, 15, $end='...') }}
                                             @if($purchasedService->cancel_status == 1)
                                                 <span class="ml-2 badge badge-danger badge-inline badge-md">{{ translate('Cancelled') }}</span>

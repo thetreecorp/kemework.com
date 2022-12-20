@@ -8,6 +8,7 @@
     $lang = \App\Models\Language::where('code', $locale)->first();
 @endphp
 <!DOCTYPE html>
+
 @if($lang != null && $lang->rtl == 1)
 <html dir="rtl" lang="en">
 @else
@@ -159,7 +160,7 @@
 
     </div>
 
-    
+
     @if (get_setting('show_website_popup') == 'on')
         <div class="modal website-popup removable-session d-none" data-key="website-popup" data-value="removed">
             <div class="absolute-full bg-black opacity-60"></div>
@@ -190,7 +191,7 @@
     @endif
 
     @yield('modal')
-    
+
 
     @if (get_setting('facebook_chat_activation_checkbox') == 1)
         <script type="text/javascript">

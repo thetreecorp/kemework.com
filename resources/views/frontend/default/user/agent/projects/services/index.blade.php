@@ -12,7 +12,7 @@
                     <div class="row align-items-center">
                         <div class="col d-flex justify-content-between">
                             <h1 class="fs-16 fw-700">{{ translate('Services') }}</h1>
-                            <a href="{{ route('service.create') }}" class="btn btn-primary rounded-1"><i class="la la-plus" aria-hidden="true"></i>{{ translate('Add New Service') }}</a>
+                            <a href="{{ route('agent.service.create') }}" class="btn btn-primary rounded-1"><i class="la la-plus" aria-hidden="true"></i>{{ translate('Add New Service') }}</a>
                         </div>
                     </div>
                 </div>
@@ -21,7 +21,7 @@
                     @foreach($services as $service)
                         <div class="col-lg-4">
                             <div class="card overflow-hidden rounded-2 border-gray-light hov-box">
-                                <a href="{{ route('service.show', $service->slug) }}">
+                                <a href="{{ route('agent.service.show', $service->slug) }}">
                                     @if($service->image != null)
                                         <img src="{{ custom_asset($service->image) }}" class="card-img-top" alt="{{ translate('Service Image') }}" height="212">
                                     @else
@@ -42,11 +42,11 @@
                                         </span>
                                     </div>
 
-                                   <a href="{{ route('service.show', $service->slug) }}" class="text-dark"  title="{{ $service->title }}"><h5 class="card-title fs-16 fw-700 h-40px">{{ \Illuminate\Support\Str::limit($service->title, 40, $end='...') }}</h5></a>
+                                   <a href="{{ route('agent.service.show', $service->slug) }}" class="text-dark"  title="{{ $service->title }}"><h5 class="card-title fs-16 fw-700 h-40px">{{ \Illuminate\Support\Str::limit($service->title, 40, $end='...') }}</h5></a>
                                 </div>
                                 <div class="card-footer justify-content-between">
-                                    <span class="btn btn-primary btn-sm rounded-1"><a href="{{ route('service.edit', $service->slug) }}" class="text-white">{{ translate('Edit') }}</a></span>
-                                    <a href="#" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" data-href="{{ route('service.destroy', $service->slug) }}" title="Delete">
+                                    <span class="btn btn-primary btn-sm rounded-1"><a href="{{ route('agent.service.edit', $service->slug) }}" class="text-white">{{ translate('Edit') }}</a></span>
+                                    <a href="#" class="btn btn-soft-danger btn-icon btn-circle btn-sm confirm-delete" data-href="{{ route('agent.service.destroy', $service->slug) }}" title="Delete">
                                         <i class="las la-trash"></i>
                                     </a>
                                 </div>

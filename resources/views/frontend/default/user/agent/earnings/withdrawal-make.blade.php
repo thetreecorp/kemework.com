@@ -24,7 +24,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <form class="form-horizontal" action="{{ route('store_withdrawal_request_to_admin') }}" method="POST" enctype="multipart/form-data">
+                            <form class="form-horizontal" action="{{ route('agent.store_withdrawal_request_to_admin') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
                                     <label class="form-label">

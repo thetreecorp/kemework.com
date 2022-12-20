@@ -72,17 +72,17 @@
                     </a>
                     <ul class="aiz-side-nav-list level-2">
                         <li class="aiz-side-nav-item">
-                            <a href="{{ route('service.create') }}" class="aiz-side-nav-link {{ areActiveRoutes(['service', 'service.create'])}}">
+                            <a href="{{ route('agent.service.create') }}" class="aiz-side-nav-link {{ areActiveRoutes(['service', 'agent.service.create'])}}">
                                 <span class="aiz-side-nav-text">{{ translate('Add New Service') }}</span>
                             </a>
                         </li>
                         <li class="aiz-side-nav-item">
-                            <a href="{{ route('service.freelancer_index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['service', 'service.edit'])}}">
+                            <a href="{{ route('agent.service.freelancer_index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['service', 'agent.service.edit'])}}">
                                 <span class="aiz-side-nav-text">{{ translate('All Services') }}</span>
                             </a>
                         </li>
                         <li class="aiz-side-nav-item">
-                            <a href="{{ route('service.sold') }}" class="aiz-side-nav-link {{ areActiveRoutes(['service.sold'])}}">
+                            <a href="{{ route('agent.service.sold') }}" class="aiz-side-nav-link {{ areActiveRoutes(['agent.service.sold'])}}">
                                 <span class="aiz-side-nav-text">{{ translate('Sold Services') }}</span>
                             </a>
                         </li>
@@ -104,7 +104,7 @@
                     </a>
                     <ul class="aiz-side-nav-list level-2">
                         <li class="aiz-side-nav-item">
-                            <a href="{{ route('bidded_projects') }}" class="aiz-side-nav-link {{ areActiveRoutes(['bidded_projects'])}}">
+                            <a href="{{ route('agent.bidded_projects') }}" class="aiz-side-nav-link {{ areActiveRoutes(['agent.bidded_projects'])}}">
                                 <span class="aiz-side-nav-text">{{ translate('Bidded') }}</span>
                             </a>
                         </li>
@@ -124,7 +124,7 @@
                             </a>
                         </li>
                         <li class="aiz-side-nav-item">
-                            <a href="{{ route('private_projects') }}" class="aiz-side-nav-link {{ areActiveRoutes(['private_projects'])}}">
+                            <a href="{{ route('agent.private_projects') }}" class="aiz-side-nav-link {{ areActiveRoutes(['agent.private_projects'])}}">
                                 <span class="aiz-side-nav-text">{{ translate('Project Proposal') }}</span>
                             </a>
                         </li>
@@ -144,22 +144,22 @@
                     </a>
                     <ul class="aiz-side-nav-list level-2">
                         <li class="aiz-side-nav-item">
-                            <a href="{{ route('recieved_milestone_payment_index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['recieved_milestone_payment_index'])}}">
+                            <a href="{{ route('agent.recieved_milestone_payment_index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['agent.recieved_milestone_payment_index'])}}">
                                 <span class="aiz-side-nav-text">{{ translate('Earnings History') }}</span>
                             </a>
                         </li>
                         <li class="aiz-side-nav-item">
-                            <a href="{{ route('send_withdrawal_request_to_admin') }}" class="aiz-side-nav-link {{ areActiveRoutes(['send_withdrawal_request_to_admin'])}}">
+                            <a href="{{ route('agent.send_withdrawal_request_to_admin') }}" class="aiz-side-nav-link {{ areActiveRoutes(['agent.send_withdrawal_request_to_admin'])}}">
                                 <span class="aiz-side-nav-text">{{ translate('Withdraw Request') }}</span>
                             </a>
                         </li>
                         <li class="aiz-side-nav-item">
-                            <a href="{{ route('withdrawal_history_index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['withdrawal_history_index'])}}">
+                            <a href="{{ route('agent.withdrawal_history_index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['agent.withdrawal_history_index'])}}">
                                 <span class="aiz-side-nav-text">{{ translate('Withdraw History') }}</span>
                             </a>
                         </li>
                         <li class="aiz-side-nav-item">
-                            <a href="{{ route('sent-milestone-requests.all') }}" class="aiz-side-nav-link {{ areActiveRoutes(['sent-milestone-requests.all'])}}">
+                            <a href="{{ route('agent.sent-milestone-requests.all') }}" class="aiz-side-nav-link {{ areActiveRoutes(['agent.sent-milestone-requests.all'])}}">
                                 <span class="aiz-side-nav-text">{{ translate('Milestone Requests') }}</span>
                             </a>
                         </li>

@@ -20,7 +20,7 @@
                         <h4 class="h6 font-weight-medium mb-0">{{ translate('Service Info') }}</h4>
                     </div>
                     <div class="card-body">
-                        <form class="js-validate" action="{{ route('service.store') }}" method="POST" enctype="multipart/form-data">
+                        <form class="js-validate" action="{{ route('agent.service.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="js-form-message">
                                 <div class="form-group">
