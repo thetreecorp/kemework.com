@@ -134,107 +134,131 @@
                 </ul>
                 <!-- dropdowns right side starts -->
                 <!-- language drop-down starts -->
-                <div class="lang-div" id="languge-div" onmouseenter="langugedivshow()" onmouseleave="langugedivhide()">
-                    <ul>
-                        <li class="btn-active">
-                            <a>
-                                <img src="{{ asset('public/kemedar/images/en.png') }}" alt="">
-                                <span> English</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a>
-                                <img src="{{ asset('public/kemedar/images/ar.png') }}" alt="">
-                                <span> لعربية|</span>
-                            </a>
-                        </li>
-                        <li class="">
-                            <a>
-                                <img src="{{ asset('public/kemedar/images/es.png') }}" alt="">
-                                <span> Español</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a>
-                                <img src="{{ asset('public/kemedar/images/ru.png') }}" alt="">
-                                <span> Russian</span>
-                            </a>
-                        </li>
-                        <li class="">
-                            <a>
-                                <img src="{{ asset('public/kemedar/images/tr.png') }}" alt="">
-                                <span> Türk</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a>
-                                <img src="{{ asset('public/kemedar/images/fr.png') }}" alt="">
-                                <span> Français</span>
-                            </a>
-                        </li>
-                        <li class="">
-                            <a>
-                                <img src="{{ asset('public/kemedar/images/th.png') }}" alt="">
-                                <span> ไทย</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a>
-                                <img src="{{ asset('public/kemedar/images/it.png') }}" alt="">
-                                <span>Italiano </span>
-                            </a>
-                        </li>
-                        <li class="">
-                            <a>
-                                <img src="{{ asset('public/kemedar/images/de.png') }}" alt="">
-                                <span> German</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a>
-                                <img src="{{ asset('public/kemedar/images/id.png') }}" alt="">
-                                <span> Bahasa Indonesia</span>
-                            </a>
-                        </li>
-                        <li class="">
-                            <a>
-                                <img src="{{ asset('public/kemedar/images/hi.png') }}" alt="">
-                                <span>हिन्दी</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a>
-                                <img src="{{ asset('public/kemedar/images/ur.png') }}" alt="">
-                                <span> ردو|</span>
-                            </a>
-                        </li>
-                        <li class="">
-                            <a>
-                                <img src="{{ asset('public/kemedar/images/vi.png') }}" alt="">
-                                <span> Tiếng Việt</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a>
-                                <img src="{{ asset('public/kemedar/images/bd.png') }}" alt="">
-                                <span> বাংলা</span>
-                            </a>
-                        </li>
-                        <li class="">
-                            <a>
-                                <img src="{{ asset('public/kemedar/images/cn.png') }}" alt="">
-                                <span> 中文</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a>
-                                <img src="{{ asset('public/kemedar/images/jp.png') }}" alt="">
-                                <span> 日本</span>
-                            </a>
-                        </li>
 
-                    </ul>
-                </div>
+                    <div class="lang-div" id="languge-div"  onmouseenter="langugedivshow()" onmouseleave="langugedivhide()">
+                        @php
+                            if(Session::has('locale')){
+                                $locale = Session::get('locale', Config::get('app.locale'));
+                            }
+                            else{
+                                $locale = env('DEFAULT_LANGUAGE');
+                            }
+                        @endphp
+
+                        <ul>
+                                    @foreach (\App\Models\Language::where('enable',1)->get() as $key => $language)
+                                <li  @if($locale == $language->code) class="btn-active" @endif>
+                                        <a href="{{ route('language.change',$language->code) }}" >
+                                            <img src="{{ my_asset('assets/frontend/default/img/flags/'.$language->code.'.png') }}" height="11">
+                                            <span class="ml-2">{{ $language->name }}</span>
+                                        </a>
+                                </li>
+                                    @endforeach
+                        </ul>
+                    </div>
+
+
+{{--                <div class="lang-div" id="languge-div" onmouseenter="langugedivshow()" onmouseleave="langugedivhide()">--}}
+{{--                    <ul>--}}
+{{--                        <li class="btn-active">--}}
+{{--                            <a>--}}
+{{--                                <img src="{{ asset('public/kemedar/images/en.png') }}" alt="">--}}
+{{--                                <span> English</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <a>--}}
+{{--                                <img src="{{ asset('public/kemedar/images/ar.png') }}" alt="">--}}
+{{--                                <span> لعربية|</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li class="">--}}
+{{--                            <a>--}}
+{{--                                <img src="{{ asset('public/kemedar/images/es.png') }}" alt="">--}}
+{{--                                <span> Español</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <a>--}}
+{{--                                <img src="{{ asset('public/kemedar/images/ru.png') }}" alt="">--}}
+{{--                                <span> Russian</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li class="">--}}
+{{--                            <a>--}}
+{{--                                <img src="{{ asset('public/kemedar/images/tr.png') }}" alt="">--}}
+{{--                                <span> Türk</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <a>--}}
+{{--                                <img src="{{ asset('public/kemedar/images/fr.png') }}" alt="">--}}
+{{--                                <span> Français</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li class="">--}}
+{{--                            <a>--}}
+{{--                                <img src="{{ asset('public/kemedar/images/th.png') }}" alt="">--}}
+{{--                                <span> ไทย</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <a>--}}
+{{--                                <img src="{{ asset('public/kemedar/images/it.png') }}" alt="">--}}
+{{--                                <span>Italiano </span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li class="">--}}
+{{--                            <a>--}}
+{{--                                <img src="{{ asset('public/kemedar/images/de.png') }}" alt="">--}}
+{{--                                <span> German</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <a>--}}
+{{--                                <img src="{{ asset('public/kemedar/images/id.png') }}" alt="">--}}
+{{--                                <span> Bahasa Indonesia</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li class="">--}}
+{{--                            <a>--}}
+{{--                                <img src="{{ asset('public/kemedar/images/hi.png') }}" alt="">--}}
+{{--                                <span>हिन्दी</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <a>--}}
+{{--                                <img src="{{ asset('public/kemedar/images/ur.png') }}" alt="">--}}
+{{--                                <span> ردو|</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li class="">--}}
+{{--                            <a>--}}
+{{--                                <img src="{{ asset('public/kemedar/images/vi.png') }}" alt="">--}}
+{{--                                <span> Tiếng Việt</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <a>--}}
+{{--                                <img src="{{ asset('public/kemedar/images/bd.png') }}" alt="">--}}
+{{--                                <span> বাংলা</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li class="">--}}
+{{--                            <a>--}}
+{{--                                <img src="{{ asset('public/kemedar/images/cn.png') }}" alt="">--}}
+{{--                                <span> 中文</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <a>--}}
+{{--                                <img src="{{ asset('public/kemedar/images/jp.png') }}" alt="">--}}
+{{--                                <span> 日本</span>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+
+{{--                    </ul>--}}
+{{--                </div>--}}
                 <!-- language drop-down ends -->
 
                 <!-- country drop down starts -->

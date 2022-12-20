@@ -51,7 +51,6 @@ class BookmarkedProjectController extends Controller
             $bookmarked_project->user_id = Auth::user()->id;
             $bookmarked_project->project_id =$id;
             $bookmarked_project->save();
-
             $userPackage->bookmark_project_limit--;
             $userPackage->save();
         }

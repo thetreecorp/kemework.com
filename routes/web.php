@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/demo/cron_1', 'DemoController@cron_1');
 Route::get('/demo/cron_2', 'DemoController@cron_2');
 
-Route::get('/refresh-csrf', function(){
+Route::get('/refresh-csrf', function () {
     return csrf_token();
 });
 Route::post('/aiz-uploader', 'AizUploadController@show_uploader');
@@ -53,6 +53,7 @@ Route::get('/social-login/{provider}/callback', 'Auth\LoginController@handleProv
 
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/language/{locale}', 'LanguageController@changeLanguage')->name('language.change');
+
 Route::get('/package-select', 'PackageController@select_package')->name('select_package');
 Route::get('/check', 'UserController@userOnlineStatus');
 
@@ -65,85 +66,83 @@ Route::post('/user-account-type', 'UserController@set_account_type')->name('user
 Route::get('/blog', 'BlogController@all_blog')->name('blog');
 Route::get('/blog/{slug}', 'BlogController@blog_details')->name('blog.details');
 
-Route::group(['middleware' => ['user']], function(){
+Route::group(['middleware' => ['user']], function () {
     Route::post('/package/get-package-purchase-modal', 'PackageController@get_package_purchase_modal')->name('get_package_purchase_modal');
     Route::get('/packages/free-package-purchase/{id}', 'PackageController@package_purchase_free')->name('package_purchase_free');
 
     Route::post('/packages/get-package-purchase-modal', 'ProjectController@get_bid_modal')->name('get_bid_for_project_modal');
 
-	//Purchase PackagePayment
-	Route::post('purchase-package/payment', 'PackagePaymentController@purchase_package')->name('purchase_package');
+    //Purchase PackagePayment
+    Route::post('purchase-package/payment', 'PackagePaymentController@purchase_package')->name('purchase_package');
 
     Route::get('send-verification-request', 'HomeController@send_email_verification_request')->name('email.verification');
     Route::get('verification-confirmation/{code}', 'HomeController@verification_confirmation')->name('email.verification.confirmation');
 });
 
-Route::group(['middleware' => ['user', 'verified', 'packagePurchased']], function(){
-	Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
+Route::group(['middleware' => ['user', 'verified', 'packagePurchased']], function () {
+    Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
 
-	Route::get('/projects/running-project', 'ProjectController@my_running_project')->name('projects.my_running_project');
-	Route::get('/projects/completed-project', 'ProjectController@my_completed_project')->name('projects.my_completed_project');
-	Route::get('/projects/cancelled-project', 'ProjectController@my_cancelled_project')->name('projects.my_cancelled_project');
-	Route::get('/projects/cancel-project-request/{id}', 'ProjectController@project_cancel')->name('projects.cancel');
+    Route::get('/projects/running-project', 'ProjectController@my_running_project')->name('projects.my_running_project');
+    Route::get('/projects/completed-project', 'ProjectController@my_completed_project')->name('projects.my_completed_project');
+    Route::get('/projects/cancelled-project', 'ProjectController@my_cancelled_project')->name('projects.my_cancelled_project');
+    Route::get('/projects/cancel-project-request/{id}', 'ProjectController@project_cancel')->name('projects.cancel');
 
-	Route::post('cancel-project-request/store', 'CancelProjectController@store')->name('cancel-project-request.store');
+    Route::post('cancel-project-request/store', 'CancelProjectController@store')->name('cancel-project-request.store');
 
-	Route::get('/profile-settings', 'ProfileController@user_profile')->name('user.profile');
-	Route::post('/profile-settings/basic-info-update', 'ProfileController@basic_info_update')->name('user_profile.basic_info_update');
-	Route::post('/profile-settings/photo-update', 'ProfileController@photo_update')->name('user_profile.photo_update');
-	Route::post('/profile-settings/bio-update', 'ProfileController@bio_update')->name('user_profile.bio_update');
-	Route::post('/profile-settings/verification-update', 'VerificationController@verification_store')->name('user_profile.verification_store');
+    Route::get('/profile-settings', 'ProfileController@user_profile')->name('user.profile');
+    Route::post('/profile-settings/basic-info-update', 'ProfileController@basic_info_update')->name('user_profile.basic_info_update');
+    Route::post('/profile-settings/photo-update', 'ProfileController@photo_update')->name('user_profile.photo_update');
+    Route::post('/profile-settings/bio-update', 'ProfileController@bio_update')->name('user_profile.bio_update');
+    Route::post('/profile-settings/verification-update', 'VerificationController@verification_store')->name('user_profile.verification_store');
 
-	Route::post('/interview-chat', 'ChatController@index')->name('call_for_interview');
-	Route::post('/chat-reply', 'ChatController@chat_reply')->name('chat.reply');
+    Route::post('/interview-chat', 'ChatController@index')->name('call_for_interview');
+    Route::post('/chat-reply', 'ChatController@chat_reply')->name('chat.reply');
 
-	Route::get('/chat', 'ChatController@chat_index')->name('all.messages');
-	Route::get('/single-chat/{id}', 'ChatController@chat_view')->name('chat_view');
-	Route::get('/chat/refresh/{id}', 'ChatController@chat_refresh')->name('chat_refresh');
+    Route::get('/chat', 'ChatController@chat_index')->name('all.messages');
+    Route::get('/single-chat/{id}', 'ChatController@chat_view')->name('chat_view');
+    Route::get('/chat/refresh/{id}', 'ChatController@chat_refresh')->name('chat_refresh');
     Route::post('/chat/old-messages', 'ChatController@get_old_messages')->name('get-old-message');
 
-	//hire from interview
+    //hire from interview
     Route::get('/hiring-invitation/reject{id}', 'HireController@reject')->name('hiring.reject');
-	Route::post('/hiring-confirmation-store', 'HireController@hire')->name('hiring_confirmation_store');
+    Route::post('/hiring-confirmation-store', 'HireController@hire')->name('hiring_confirmation_store');
 
-	//milestone message showing exampleModalLabel
-	Route::post('/milestone-requests-message', 'MilestonePaymentController@milestone_request_message')->name('milestone_request_message_show_modal');
+    //milestone message showing exampleModalLabel
+    Route::post('/milestone-requests-message', 'MilestonePaymentController@milestone_request_message')->name('milestone_request_message_show_modal');
 
-	//walletController
-	Route::resource('wallet','WalletController');
-	Route::post('wallet-recharge', 'WalletController@rechage')->name('wallet.recharge');
+    //walletController
+    Route::resource('wallet', 'WalletController');
+    Route::post('wallet-recharge', 'WalletController@rechage')->name('wallet.recharge');
 
-	Route::get('/freelancer/packages/history', 'PackagePaymentController@freelancer_package_purchase_history_index')->name('freelancer.packages.history');
-	Route::get('/client/packages/history', 'PackagePaymentController@freelancer_package_purchase_history_index')->name('client.packages.history');
+    Route::get('/freelancer/packages/history', 'PackagePaymentController@freelancer_package_purchase_history_index')->name('freelancer.packages.history');
+    Route::get('/client/packages/history', 'PackagePaymentController@freelancer_package_purchase_history_index')->name('client.packages.history');
 
-	Route::get('/user-reviews/{type}', 'ReviewController@review_index')->name('user_review');
+    Route::get('/user-reviews/{type}', 'ReviewController@review_index')->name('user_review');
 
-	//reviews
-	Route::post('/reviews/store', 'ReviewController@store')->name('reviews.store');
+    //reviews
+    Route::post('/reviews/store', 'ReviewController@store')->name('reviews.store');
 
-	Route::get('/notifications','NotificationController@frontend_listing')->name('frontend.notifications');
-
-
-	Route::get('/get/citys','HomeController@getCity')->name('getCity');
+    Route::get('/notifications', 'NotificationController@frontend_listing')->name('frontend.notifications');
 
 
+    Route::get('/get/citys', 'HomeController@getCity')->name('getCity');
 });
 
 // Client middleware
-Route::group(['middleware' => ['auth','verified', 'client', 'packagePurchased']], function(){
-	Route::resource('/projects', 'ProjectController');
-	Route::get('/my-open-projects', 'ProjectController@my_open_project')->name('projects.my_open_project');
-	Route::get('/project-bids/{slug}', 'ProjectController@project_bids')->name('project.bids');
-	Route::get('/invition-for-hire-freelancer/{username}', 'HireController@freelancer_invition')->name('invition_for_hire_freelancer');
-	Route::post('/invition-for-hire-freelancer/store', 'HireController@store')->name('invition_for_hire_freelancer_sent');
+Route::group(['middleware' => ['auth', 'verified', 'client', 'packagePurchased']], function () {
+    Route::resource('/projects', 'ProjectController');
+    Route::get('/my-open-projects', 'ProjectController@my_open_project')->name('projects.my_open_project');
+    Route::get('/project-bids/{slug}', 'ProjectController@project_bids')->name('project.bids');
+    Route::get('/invition-for-hire-freelancer/{username}', 'HireController@freelancer_invition')->name('invition_for_hire_freelancer');
+    Route::post('/invition-for-hire-freelancer/store', 'HireController@store')->name('invition_for_hire_freelancer_sent');
 
-	//Milestone payment
-	Route::get('/recieved-milestone-requests', 'MilestonePaymentController@recieved_milestone_request_index')->name('milestone-requests.all');
-	Route::post('/milestone-payment-select-modal', 'MilestonePaymentController@show_payment_select_modal')->name('show_payment_select_modal');
-	Route::post('/milestone-payment', 'MilestonePaymentController@index')->name('milestone.pay_to_admin');
+    //Milestone payment
+    Route::get('/recieved-milestone-requests', 'MilestonePaymentController@recieved_milestone_request_index')->name('milestone-requests.all');
+    Route::post('/milestone-payment-select-modal', 'MilestonePaymentController@show_payment_select_modal')->name('show_payment_select_modal');
+    Route::post('/milestone-payment', 'MilestonePaymentController@index')->name('milestone.pay_to_admin');
 
-	//project completed
-	Route::get('/project-done/{id}', 'ProjectController@project_done')->name('projects.complete');
+    //project completed
+    Route::get('/project-done/{id}', 'ProjectController@project_done')->name('projects.complete');
 
     Route::resource('bookmarked-freelancers', 'BookmarkedFreelancerController');
     Route::get('/favirite/agent', 'BookmarkedFreelancerController@agent')->name('favorite.agent');
@@ -152,153 +151,147 @@ Route::group(['middleware' => ['auth','verified', 'client', 'packagePurchased']]
 
 
     Route::get('/bookmarked-freelancers/store/{id}', 'BookmarkedFreelancerController@store')->name('bookmarked-freelancers.store');
-	Route::get('/bookmarked-freelancers/destroy/{id}', 'BookmarkedFreelancerController@destroy')->name('bookmarked-freelancers.destroy');
-	Route::get('/client/purchased-services', 'ServiceController@client_purchased_services')->name('client.purchased.services');
+    Route::get('/bookmarked-freelancers/destroy/{id}', 'BookmarkedFreelancerController@destroy')->name('bookmarked-freelancers.destroy');
+    Route::get('/client/purchased-services', 'ServiceController@client_purchased_services')->name('client.purchased.services');
 
 
     Route::get('/service/{id}/cancel', 'ServiceController@cancel_service')->name('services.cancel');
 
-	Route::post('/service/cancel/store', 'ServiceController@cancel_service_store')->name('services.cancel.store');
+    Route::post('/service/cancel/store', 'ServiceController@cancel_service_store')->name('services.cancel.store');
 
-	Route::get('/client/cancel-requests-services', 'ServiceController@client_cancel_requested_services')->name('client.services.cancel.requests');
-	Route::get('/client/cancelled-services', 'ServiceController@client_cancelled_services')->name('client.services.cancelled');
-
+    Route::get('/client/cancel-requests-services', 'ServiceController@client_cancel_requested_services')->name('client.services.cancel.requests');
+    Route::get('/client/cancelled-services', 'ServiceController@client_cancelled_services')->name('client.services.cancelled');
 });
 
 
 Route::get('service/show/{slug}', 'ServiceController@show')->name('service.show');
 Route::post('/service/package', 'ServiceController@get_service_package_purchase_modal')->name('get_package_service_modal');
-Route::post('/service/package-purchase','ServiceController@purchase_service_package')->name('purchase_service_package');
+Route::post('/service/package-purchase', 'ServiceController@purchase_service_package')->name('purchase_service_package');
 
 
 // Freelancer middleware
-Route::group(['middleware' => ['auth', 'verified', 'freelancer', 'packagePurchased']], function(){
+Route::group(['middleware' => ['auth', 'verified', 'freelancer', 'packagePurchased']], function () {
+
     Route::post('/bids/store', 'BiddingController@store')->name('bids.store');
-	Route::get('/account-settings', 'ProfileController@user_account')->name('user.account');
-	Route::post('/profile-settings/portfolio-add', 'PortfolioController@store')->name('user_profile.portfolio_add');
-	Route::get('/profile-settings/portfolio-edit/{id}', 'PortfolioController@edit')->name('user_profile.portfolio_edit');
-	Route::post('/profile-settings/portfolio-update/{id}', 'PortfolioController@update')->name('user_profile.portfolio_update');
+    Route::get('/account-settings', 'ProfileController@user_account')->name('user.account');
+    Route::post('/profile-settings/portfolio-add', 'PortfolioController@store')->name('user_profile.portfolio_add');
+    Route::get('/profile-settings/portfolio-edit/{id}', 'PortfolioController@edit')->name('user_profile.portfolio_edit');
+    Route::post('/profile-settings/portfolio-update/{id}', 'PortfolioController@update')->name('user_profile.portfolio_update');
     Route::get('/profile-settings/portfolio-delete/{id}', 'PortfolioController@destroy')->name('user_profile.portfolio_destroy');
 
-	Route::post('/profile-settings/work-experience-add', 'WorkExperienceController@store')->name('user_profile.work_experience_add');
-	Route::get('/profile-settings/work-experience-edit/{id}', 'WorkExperienceController@edit')->name('user_profile.work_experience_edit');
-	Route::post('/profile-settings/work-experience-update/{id}', 'WorkExperienceController@update')->name('user_profile.work_experience_update');
+    Route::post('/profile-settings/work-experience-add', 'WorkExperienceController@store')->name('user_profile.work_experience_add');
+    Route::get('/profile-settings/work-experience-edit/{id}', 'WorkExperienceController@edit')->name('user_profile.work_experience_edit');
+    Route::post('/profile-settings/work-experience-update/{id}', 'WorkExperienceController@update')->name('user_profile.work_experience_update');
     Route::get('/profile-settings/work-experience-delete/{id}', 'WorkExperienceController@destroy')->name('user_profile.work_experience_destroy');
 
-	Route::post('/profile-settings/education-info-add', 'FreelancerEducationController@store')->name('user_profile.education_info_add');
-	Route::get('/profile-settings/education-info-edit/{id}', 'FreelancerEducationController@edit')->name('user_profile.education_info_edit');
-	Route::post('/profile-settings/education-info-update/{id}', 'FreelancerEducationController@update')->name('user_profile.education_info_update');
+    Route::post('/profile-settings/education-info-add', 'FreelancerEducationController@store')->name('user_profile.education_info_add');
+    Route::get('/profile-settings/education-info-edit/{id}', 'FreelancerEducationController@edit')->name('user_profile.education_info_edit');
+    Route::post('/profile-settings/education-info-update/{id}', 'FreelancerEducationController@update')->name('user_profile.education_info_update');
     Route::get('/profile-settings/education-info-delete/{id}', 'FreelancerEducationController@destroy')->name('user_profile.education_info_destroy');
 
-	Route::post('/freelancer-account-info/store', 'FreelancerAccountController@store')->name('freelancer_account.store');
-	Route::get('/bidded-projects', 'ProjectController@bidded_projects')->name('bidded_projects');
+    Route::post('/freelancer-account-info/store', 'FreelancerAccountController@store')->name('freelancer_account.store');
+    Route::get('/bidded-projects', 'ProjectController@bidded_projects')->name('bidded_projects');
 
-	//Route::get('/services', 'ServiceController@index')->name('service.index');
-	Route::get('/service/create', 'ServiceController@create')->name('service.create');
-	Route::post('/service/store', 'ServiceController@store')->name('service.store');
-
-	Route::get('/service/edit/{slug}', 'ServiceController@edit')->name('service.edit');
-	Route::post('/service/update/{slug}', 'ServiceController@update')->name('service.update');
-	Route::get('/service/destroy/{slug}', 'ServiceController@destroy')->name('service.destroy');
-
-
-	Route::get('/private-projects', 'HireController@private_projects')->name('private_projects');
-
-	//Milestone payment request sending cancel_modal
-	Route::post('/partial-payment-modal', 'MilestonePaymentController@request_modal')->name('milestone_payment_request.modal');
-	Route::post('/partial-payment-request-store', 'MilestonePaymentController@request_store')->name('partial_payment_request');
-	Route::get('/sent-milestone-requests', 'MilestonePaymentController@sent_milestone_request_index')->name('sent-milestone-requests.all');
-	Route::get('/recieved-milestone-payment', 'MilestonePaymentController@recieved_milestone_payment_index')->name('recieved_milestone_payment_index');
+    Route::get('services', 'ServiceController@index')->name('service.index');
+    Route::get('service/create', 'ServiceController@create')->name('service.create');
+    Route::post('service/store', 'ServiceController@store')->name('service.store');
+    Route::get('service/edit/{slug}', 'ServiceController@edit')->name('service.edit');
+    Route::post('service/update/{slug}', 'ServiceController@update')->name('service.update');
+    Route::get('service/destroy/{slug}', 'ServiceController@destroy')->name('service.destroy');
+    Route::get('services', 'ServiceController@freelancer_index')->name('service.freelancer_index');
+    Route::get('services/purchased', 'ServiceController@sold_services')->name('service.sold');
+    Route::get('service/show/{slug}', 'ServiceController@show')->name('service.show');
+    Route::post('service/package', 'ServiceController@get_service_package_purchase_modal')->name('get_package_service_modal');
+    Route::post('service/package-purchase', 'ServiceController@purchase_service_package')->name('purchase_service_package');
 
 
-	//payment history
-	Route::get('/send-withdrawal-request', 'PaytoFreelancerController@send_withdrawal_request_index')->name('send_withdrawal_request_to_admin');
-	Route::get('/withdrawal-history', 'PaytoFreelancerController@withdrawal_history_index')->name('withdrawal_history_index');
-	Route::post('/send-withdrawal-request/store', 'PaytoFreelancerController@send_withdrawal_request_store')->name('store_withdrawal_request_to_admin');
+
+    Route::get('private-projects', 'HireController@private_projects')->name('private_projects');
+
+    //Milestone payment request sending cancel_modal
+    Route::post('/partial-payment-modal', 'MilestonePaymentController@request_modal')->name('milestone_payment_request.modal');
+    Route::post('/partial-payment-request-store', 'MilestonePaymentController@request_store')->name('partial_payment_request');
+    Route::get('/sent-milestone-requests', 'MilestonePaymentController@sent_milestone_request_index')->name('sent-milestone-requests.all');
+    Route::get('/recieved-milestone-payment', 'MilestonePaymentController@recieved_milestone_payment_index')->name('recieved_milestone_payment_index');
+
+
+    //payment history
+    Route::get('/send-withdrawal-request', 'PaytoFreelancerController@send_withdrawal_request_index')->name('send_withdrawal_request_to_admin');
+    Route::get('/withdrawal-history', 'PaytoFreelancerController@withdrawal_history_index')->name('withdrawal_history_index');
+    Route::post('/send-withdrawal-request/store', 'PaytoFreelancerController@send_withdrawal_request_store')->name('store_withdrawal_request_to_admin');
 
     Route::resource('bookmarked-projects', 'BookmarkedProjectController');
     Route::get('/bookmarked-projects/store/{id}', 'BookmarkedProjectController@store')->name('bookmarked-projects.store');
-
     Route::get('/bookmarked-service/store/{id}', 'BookmarkedProjectController@service')->name('bookmarked-service.store');
-
     Route::get('/bookmarked-projects/destroy/{id}', 'BookmarkedProjectController@destroy')->name('bookmarked-projects.destroy');
 
     Route::get('/following-clients', 'BookmarkedClientController@index')->name('bookmarked-clients.index');
     Route::get('/following-clients/store/{id}', 'BookmarkedClientController@store')->name('bookmarked-clients.store');
-	Route::get('/following-clients/destroy/{id}', 'BookmarkedClientController@destroy')->name('bookmarked-clients.destroy');
-
-	Route::get('/services', 'ServiceController@freelancer_index')->name('service.freelancer_index');
-    Route::get('services/purchased', 'ServiceController@sold_services')->name('service.sold');
-
+    Route::get('/following-clients/destroy/{id}', 'BookmarkedClientController@destroy')->name('bookmarked-clients.destroy');
 });
 
-
 // agent middleware
-Route::group(['middleware' => ['auth', 'verified', 'agent', 'packagePurchased']], function(){
+Route::group(['middleware' => ['auth', 'verified', 'agent', 'packagePurchased']], function () {
     Route::post('/bids/store', 'BiddingController@store')->name('bids.store');
-	Route::get('/account-settings', 'ProfileController@user_account')->name('user.account');
-	Route::post('/profile-settings/portfolio-add', 'PortfolioController@store')->name('user_profile.portfolio_add');
-	Route::get('/profile-settings/portfolio-edit/{id}', 'PortfolioController@edit')->name('user_profile.portfolio_edit');
-	Route::post('/profile-settings/portfolio-update/{id}', 'PortfolioController@update')->name('user_profile.portfolio_update');
+    Route::get('/account-settings', 'ProfileController@user_account')->name('user.account');
+    Route::post('/profile-settings/portfolio-add', 'PortfolioController@store')->name('user_profile.portfolio_add');
+    Route::get('/profile-settings/portfolio-edit/{id}', 'PortfolioController@edit')->name('user_profile.portfolio_edit');
+    Route::post('/profile-settings/portfolio-update/{id}', 'PortfolioController@update')->name('user_profile.portfolio_update');
     Route::get('/profile-settings/portfolio-delete/{id}', 'PortfolioController@destroy')->name('user_profile.portfolio_destroy');
 
-	Route::post('/profile-settings/work-experience-add', 'WorkExperienceController@store')->name('user_profile.work_experience_add');
-	Route::get('/profile-settings/work-experience-edit/{id}', 'WorkExperienceController@edit')->name('user_profile.work_experience_edit');
-	Route::post('/profile-settings/work-experience-update/{id}', 'WorkExperienceController@update')->name('user_profile.work_experience_update');
+    Route::post('/profile-settings/work-experience-add', 'WorkExperienceController@store')->name('user_profile.work_experience_add');
+    Route::get('/profile-settings/work-experience-edit/{id}', 'WorkExperienceController@edit')->name('user_profile.work_experience_edit');
+    Route::post('/profile-settings/work-experience-update/{id}', 'WorkExperienceController@update')->name('user_profile.work_experience_update');
     Route::get('/profile-settings/work-experience-delete/{id}', 'WorkExperienceController@destroy')->name('user_profile.work_experience_destroy');
 
-	Route::post('/profile-settings/education-info-add', 'FreelancerEducationController@store')->name('user_profile.education_info_add');
-	Route::get('/profile-settings/education-info-edit/{id}', 'FreelancerEducationController@edit')->name('user_profile.education_info_edit');
-	Route::post('/profile-settings/education-info-update/{id}', 'FreelancerEducationController@update')->name('user_profile.education_info_update');
+    Route::post('/profile-settings/education-info-add', 'FreelancerEducationController@store')->name('user_profile.education_info_add');
+    Route::get('/profile-settings/education-info-edit/{id}', 'FreelancerEducationController@edit')->name('user_profile.education_info_edit');
+    Route::post('/profile-settings/education-info-update/{id}', 'FreelancerEducationController@update')->name('user_profile.education_info_update');
     Route::get('/profile-settings/education-info-delete/{id}', 'FreelancerEducationController@destroy')->name('user_profile.education_info_destroy');
 
-	Route::post('/freelancer-account-info/store', 'FreelancerAccountController@store')->name('freelancer_account.store');
-	Route::get('/bidded-projects', 'ProjectController@bidded_projects')->name('bidded_projects');
-
-	//Route::get('/services', 'ServiceController@index')->name('service.index');
-	Route::get('/service/create', 'ServiceController@create')->name('service.create');
-	Route::post('/service/store', 'ServiceController@store')->name('service.store');
-
-	Route::get('/service/edit/{slug}', 'ServiceController@edit')->name('service.edit');
-	Route::post('/service/update/{slug}', 'ServiceController@update')->name('service.update');
-	Route::get('/service/destroy/{slug}', 'ServiceController@destroy')->name('service.destroy');
+    Route::post('/freelancer-account-info/store', 'FreelancerAccountController@store')->name('freelancer_account.store');
 
 
-	Route::get('/private-projects', 'HireController@private_projects')->name('private_projects');
-
-	//Milestone payment request sending cancel_modal
-	Route::post('/partial-payment-modal', 'MilestonePaymentController@request_modal')->name('milestone_payment_request.modal');
-	Route::post('/partial-payment-request-store', 'MilestonePaymentController@request_store')->name('partial_payment_request');
-	Route::get('/sent-milestone-requests', 'MilestonePaymentController@sent_milestone_request_index')->name('sent-milestone-requests.all');
-	Route::get('/recieved-milestone-payment', 'MilestonePaymentController@recieved_milestone_payment_index')->name('recieved_milestone_payment_index');
+    Route::get('company/bidded-projects', 'AgentProjectController@bidded_projects')->name('agent.bidded_projects');
 
 
-	//payment history
-	Route::get('/send-withdrawal-request', 'PaytoFreelancerController@send_withdrawal_request_index')->name('send_withdrawal_request_to_admin');
-	Route::get('/withdrawal-history', 'PaytoFreelancerController@withdrawal_history_index')->name('withdrawal_history_index');
-	Route::post('/send-withdrawal-request/store', 'PaytoFreelancerController@send_withdrawal_request_store')->name('store_withdrawal_request_to_admin');
+
+    //Route::get('/services', 'ServiceController@index')->name('service.index');
+    Route::get('agent/service/create', 'AgentServiceController@create')->name('agent.service.create');
+    Route::post('agent/service/store', 'AgentServiceController@store')->name('agent.service.store');
+    Route::get('agent/service/edit/{slug}', 'AgentServiceController@edit')->name('agent.service.edit');
+    Route::post('agent/service/update/{slug}', 'AgentServiceController@update')->name('agent.service.update');
+    Route::get('agent/service/destroy/{slug}', 'AgentServiceController@destroy')->name('agent.service.destroy');
+    Route::get('agent/services', 'AgentServiceController@freelancer_index')->name('agent.service.freelancer_index');
+    Route::get('agent/services/purchased', 'AgentServiceController@sold_services')->name('agent.service.sold');
+    Route::get('agent/service/show/{slug}', 'AgentServiceController@show')->name('agent.service.show');
+    Route::post('agent/service/package', 'AgentServiceController@get_service_package_purchase_modal')->name('agent.get_package_service_modal');
+    Route::post('agent/service/package-purchase', 'AgentServiceController@purchase_service_package')->name('agent.purchase_service_package');
+
+
+
+
+    Route::get('company/private-projects', 'AgentHireController@private_projects')->name('agent.private_projects');
+
+    //Milestone payment request sending cancel_modal
+    Route::post('partial-payment-modal', 'AgentMilestonePaymentController@request_modal')->name('milestone_payment_request.modal');
+    Route::post('partial-payment-request-store', 'AgentMilestonePaymentController@request_store')->name('partial_payment_request');
+    Route::get('company/sent-milestone-requests', 'AgentMilestonePaymentController@sent_milestone_request_index')->name('agent.sent-milestone-requests.all');
+    Route::get('company/recieved-milestone-payment', 'AgentMilestonePaymentController@recieved_milestone_payment_index')->name('agent.recieved_milestone_payment_index');
+
+
+    //payment history
+    Route::get('company/send-withdrawal-request', 'AgentPaytoFreelancerController@send_withdrawal_request_index')->name('agent.send_withdrawal_request_to_admin');
+    Route::get('company/withdrawal-history', 'AgentPaytoFreelancerController@withdrawal_history_index')->name('agent.withdrawal_history_index');
+    Route::post('company/send-withdrawal-request/store', 'AgentPaytoFreelancerController@send_withdrawal_request_store')->name('agent.store_withdrawal_request_to_admin');
 
     Route::resource('bookmarked-projects', 'BookmarkedProjectController');
     Route::get('/bookmarked-projects/store/{id}', 'BookmarkedProjectController@store')->name('bookmarked-projects.store');
     Route::get('/bookmarked-projects/destroy/{id}', 'BookmarkedProjectController@destroy')->name('bookmarked-projects.destroy');
 
-
-    Route::get('/client/bookmarked-projects/store/{id}', 'BookmarkedProjectController@store')->name('client.bookmarked-projects.store');
-    Route::get('/client/bookmarked-projects/destroy/{id}', 'BookmarkedProjectController@destroy')->name('client.bookmarked-projects.destroy');
-
-
-
-    Route::get('/favirite/task', 'BookmarkedProjectController@client_task')->name('client.favorite.task');
-
-
-
     Route::get('/following-clients', 'BookmarkedClientController@index')->name('bookmarked-clients.index');
     Route::get('/following-clients/store/{id}', 'BookmarkedClientController@store')->name('bookmarked-clients.store');
-	Route::get('/following-clients/destroy/{id}', 'BookmarkedClientController@destroy')->name('bookmarked-clients.destroy');
-
-	Route::get('/services', 'ServiceController@freelancer_index')->name('service.freelancer_index');
-    Route::get('services/purchased', 'ServiceController@sold_services')->name('service.sold');
-
+    Route::get('/following-clients/destroy/{id}', 'BookmarkedClientController@destroy')->name('bookmarked-clients.destroy');
 });
 
 Route::get('/search', 'SearchController@index')->name('search');
@@ -318,7 +311,7 @@ Route::get('/client-lists', 'HomeController@client_list')->name('client.lists');
 Route::get('/freelancer-lists', 'HomeController@freelancer_list')->name('freelancer.lists');
 Route::get('/freelancer/{user_name}', 'HomeController@freelancer_details')->name('freelancer.details');
 
-Route::get('/get_freelancer_skills','SkillController@freelancer_skills')->name('get_freelancer_skills');
+Route::get('/get_freelancer_skills', 'SkillController@freelancer_skills')->name('get_freelancer_skills');
 
 //Payments
 
