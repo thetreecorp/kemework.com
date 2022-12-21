@@ -171,12 +171,12 @@
 
 
                         <li class="aiz-side-nav-item">
-                            <a href="{{ route('projects.index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['projects.index', 'projects.create','projects.edit'])}}">
+                            <a href="{{ route('bookmarked-service.index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['bookmarked-service.index'])}}">
                                 <span class="aiz-side-nav-text">{{ translate('Services') }}</span>
                             </a>
                         </li>
                         <li class="aiz-side-nav-item">
-                            <a href="{{ route('client.favorite.task') }}" class="aiz-side-nav-link {{ areActiveRoutes(['projects.my_open_project', 'call_for_interview', 'project.bids'])}}">
+                            <a href="" class="aiz-side-nav-link {{ areActiveRoutes(['projects.my_open_project', 'call_for_interview', 'project.bids'])}}">
                                 <span class="aiz-side-nav-text">{{ translate('Tasks') }}</span>
                             </a>
                         </li>

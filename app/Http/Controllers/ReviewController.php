@@ -28,6 +28,11 @@ class ReviewController extends Controller
         $reviews = Review::where('reviewed_user_role_id', 3)->orderBy('created_at', 'desc')->paginate(10);
         return view('admin.default.reviews.client', compact('reviews'));
     }
+    public function agent_review_index()
+    {
+        $reviews = Review::where('reviewed_user_role_id', 3)->orderBy('created_at', 'desc')->paginate(10);
+        return view('admin.default.reviews.agent', compact('reviews'));
+    }
 
     public function review_index($type)
     {
