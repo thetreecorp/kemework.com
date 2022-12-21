@@ -43,6 +43,7 @@ Route::group(['prefix' =>'admin', 'middleware' => ['auth', 'admin']], function()
 	//LanguageController for Freelancer and Client
 	Route::resource('/languages', 'LanguageController');
 	Route::get('/languages/destroy/{id}', 'LanguageController@destroy')->name('languages.destroy');
+    Route::post('/languages/app-translations/importcsv', 'LanguageController@importCSVFile')->name('app-translations.importcsv');
 	Route::post('/languages/update_language_status', 'LanguageController@update_language_status')->name('languages.update_language_status');
 	Route::post('/languages/key_value_store', 'LanguageController@key_value_store')->name('languages.key_value_store');
   	Route::post('/languages/update_language_status', 'LanguageController@update_language_status')->name('languages.update_language_status');
@@ -127,7 +128,7 @@ Route::group(['prefix' =>'admin', 'middleware' => ['auth', 'admin']], function()
 	Route::get('/client-info/{user_name}', 'UserController@client_details')->name('client_info_show');
 
 	Route::get('user/ban/{id}', 'UserController@destroy')->name('user.ban');
-    
+
     Route::get('/user/login/{id}', 'UserController@login')->name('freelancers_clients.login');
 
 	Route::get('/verification-requests', 'VerificationController@verification_requests')->name('verification_requests');

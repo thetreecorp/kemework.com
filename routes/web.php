@@ -152,6 +152,12 @@ Route::group(['middleware' => ['auth', 'verified', 'client', 'packagePurchased']
 
     Route::get('/bookmarked-freelancers/store/{id}', 'BookmarkedFreelancerController@store')->name('bookmarked-freelancers.store');
     Route::get('/bookmarked-freelancers/destroy/{id}', 'BookmarkedFreelancerController@destroy')->name('bookmarked-freelancers.destroy');
+
+
+    Route::get('/bookmarked-service/', 'BookmarkedServiceController@index')->name('bookmarked-service.index');
+    Route::get('/bookmarked-service/store/{id}', 'BookmarkedServiceController@store')->name('bookmarked-service.store');
+    Route::get('/bookmarked-service/destroy/{id}', 'BookmarkedServiceController@destroy')->name('bookmarked-service.destroy');
+
     Route::get('/client/purchased-services', 'ServiceController@client_purchased_services')->name('client.purchased.services');
 
 
@@ -285,13 +291,14 @@ Route::group(['middleware' => ['auth', 'verified', 'agent', 'packagePurchased']]
     Route::get('company/withdrawal-history', 'AgentPaytoFreelancerController@withdrawal_history_index')->name('agent.withdrawal_history_index');
     Route::post('company/send-withdrawal-request/store', 'AgentPaytoFreelancerController@send_withdrawal_request_store')->name('agent.store_withdrawal_request_to_admin');
 
-    Route::resource('bookmarked-projects', 'BookmarkedProjectController');
-    Route::get('/bookmarked-projects/store/{id}', 'BookmarkedProjectController@store')->name('bookmarked-projects.store');
-    Route::get('/bookmarked-projects/destroy/{id}', 'BookmarkedProjectController@destroy')->name('bookmarked-projects.destroy');
 
-    Route::get('/following-clients', 'BookmarkedClientController@index')->name('bookmarked-clients.index');
-    Route::get('/following-clients/store/{id}', 'BookmarkedClientController@store')->name('bookmarked-clients.store');
-    Route::get('/following-clients/destroy/{id}', 'BookmarkedClientController@destroy')->name('bookmarked-clients.destroy');
+    Route::get('company/bookmarked-projects', 'AgentBookmarkedProjectController@index')->name('comapny.bokmarked-project');
+    Route::get('company/bookmarked-projects/store/{id}', 'AgentBookmarkedProjectController@store')->name('company.bookmarked-projects.store');
+    Route::get('company/bookmarked-projects/destroy/{id}', 'AgentBookmarkedProjectController@destroy')->name('company.bookmarked-projects.destroy');
+
+    Route::get('company/following-clients', 'AgentBookmarkedClientController@index')->name('agent.bookmarked-clients.index');
+    Route::get('company/following-clients/store/{id}', 'AgentBookmarkedClientController@store')->name('agent.bookmarked-clients.store');
+    Route::get('company/following-clients/destroy/{id}', 'AgentBookmarkedClientController@destroy')->name('agent.bookmarked-clients.destroy');
 });
 
 Route::get('/search', 'SearchController@index')->name('search');

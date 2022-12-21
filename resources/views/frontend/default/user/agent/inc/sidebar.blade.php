@@ -166,7 +166,7 @@
                     </ul>
                 </li>
                 <li class="aiz-side-nav-item">
-                    <a href="{{ route('bookmarked-projects.index') }}" class="aiz-side-nav-link d-flex align-items-center">
+                    <a href="{{ route('comapny.bokmarked-project') }}" class="aiz-side-nav-link d-flex align-items-center">
                         {{-- <i class="las la-tachometer-alt aiz-side-nav-icon"></i> --}}
                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
                             <g id="Group_22187" data-name="Group 22187" transform="translate(-352 -590)">
@@ -181,7 +181,7 @@
                 </li>
                 @if (Auth::user()->userPackage != null && Auth::user()->userPackage->following_status)
                 <li class="aiz-side-nav-item">
-                    <a href="{{ route('bookmarked-clients.index') }}" class="aiz-side-nav-link d-flex align-items-center">
+                    <a href="{{ route('agent.bookmarked-clients.index') }}" class="aiz-side-nav-link d-flex align-items-center">
                         {{-- <i class="las la-tachometer-alt aiz-side-nav-icon"></i> --}}
                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12.175" viewBox="0 0 12 12.175">
                             <path id="Subtraction_177" data-name="Subtraction 177" d="M5744,5606.175a2,2,0,0,1-.9-.225l-4-2.1a1.981,1.981,0,0,1-1.1-1.8v-6.1a.994.994,0,0,1,.932-1.045.848.848,0,0,1,.269.044,6.121,6.121,0,0,0,1.4.1,5.515,5.515,0,0,0,3-.9.906.906,0,0,1,1,0,5.085,5.085,0,0,0,3,.9,4.845,4.845,0,0,0,1.2-.1.963.963,0,0,1,.154-.013,1.057,1.057,0,0,1,1.045,1.014v6.2a1.9,1.9,0,0,1-1.1,1.8l-4,2A2.008,2.008,0,0,1,5744,5606.175Zm-2-5.175a1,1,0,0,0,0,2h4a1,1,0,0,0,0-2Zm2-4a1.5,1.5,0,1,0,1.5,1.5A1.5,1.5,0,0,0,5744,5597Z" transform="translate(-5738 -5594)" fill="#989ea8"/>

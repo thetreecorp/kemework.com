@@ -252,4 +252,129 @@ class LanguageController extends Controller
         }
         return 0;
     }
+
+    public function importCSVFile(Request $request){
+        ini_set('memory_limit', '-1');
+        ini_set('max_execution_time', 0);
+        //$path = Storage::disk('local')->put('app-csv-translations', $request->lang_file);
+        $path = $request->lang_file;
+        $file = fopen($path, "r"); //open the file
+        // $fileName = $_FILES["file"]["tmp_name"];
+        $row = 0;
+        while(($data = fgetcsv($file)) !== FALSE){
+            if($row == 0){
+
+                $row++;
+                continue;
+            }
+
+
+            //Arabic
+            Translation::updateOrCreate(
+                ['lang' => 'sa', 'lang_key' => trim($data[0])],
+                ['lang_value' => trim($data[1])]
+            );
+
+            //English
+            Translation::updateOrCreate(
+                ['lang' => 'en', 'lang_key' => trim($data[0])],
+                ['lang_value' => trim($data[2])]
+            );
+
+            //Turkish
+            Translation::updateOrCreate(
+                ['lang' => 'tr', 'lang_key' => trim($data[0])],
+                ['lang_value' => trim($data[3])]
+            );
+
+            //French
+            Translation::updateOrCreate(
+                ['lang' => 'fr', 'lang_key' => trim($data[0])],
+                ['lang_value' => trim($data[4])]
+            );
+            //Russian
+            Translation::updateOrCreate(
+                ['lang' => 'ru', 'lang_key' => trim($data[0])],
+                ['lang_value' => trim($data[5])]
+            );
+            //Indonesian
+            Translation::updateOrCreate(
+                ['lang' => 'id', 'lang_key' => trim($data[0])],
+                ['lang_value' => trim($data[6])]
+            );
+            //Vietnamese
+            Translation::updateOrCreate(
+                ['lang' => 'vn', 'lang_key' => trim($data[0])],
+                ['lang_value' => trim($data[7])]
+            );
+
+            //Deutsch
+            Translation::updateOrCreate(
+                ['lang' => 'de', 'lang_key' => trim($data[0])],
+                ['lang_value' => trim($data[8])]
+            );
+
+            //Urdu
+            Translation::updateOrCreate(
+                ['lang' => 'pk', 'lang_key' => trim($data[0])],
+                ['lang_value' => trim($data[9])]
+            );
+            //Hindi
+            Translation::updateOrCreate(
+                ['lang' => 'in', 'lang_key' => trim($data[0])],
+                ['lang_value' => trim($data[10])]
+            );
+
+            //Bengali
+            Translation::updateOrCreate(
+                ['lang' => 'bd', 'lang_key' => trim($data[0])],
+                ['lang_value' => trim($data[11])]
+            );
+            //Chinese
+            Translation::updateOrCreate(
+                ['lang' => 'cn', 'lang_key' => trim($data[0])],
+                ['lang_value' => trim($data[12])]
+            );
+
+            //Spanich
+            Translation::updateOrCreate(
+                ['lang' => 'es', 'lang_key' => trim($data[0])],
+                ['lang_value' => trim($data[13])]
+            );
+            //Purtugese
+            Translation::updateOrCreate(
+                ['lang' => 'es', 'lang_key' => trim($data[1])],
+                ['lang_value' => trim($data[14])]
+            );
+
+            //Italian
+            Translation::updateOrCreate(
+                ['lang' => 'it', 'lang_key' => trim($data[0])],
+                ['lang_value' => trim($data[15])]
+            );
+            //Thailand
+            Translation::updateOrCreate(
+                ['lang' => 'th', 'lang_key' => trim($data[0])],
+                ['lang_value' => trim($data[16])]
+            );
+            //Japanese
+            Translation::updateOrCreate(
+                ['lang' => 'jp', 'lang_key' => trim($data[0])],
+                ['lang_value' => trim($data[17])]
+            );
+
+
+
+            //die('done one');
+
+        }
+
+        fclose($file);
+
+        flash(translate('Translation keys has been imported successfully. Go to App Translation for more..'))->success();
+        return back();
+    }
+
+
+
 }

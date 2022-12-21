@@ -27,6 +27,7 @@
                         <div class="mr-3 mb-4 mb-lg-0 text-center text-md-left">
                             <h1 class="h5 mb-2 fw-700">{{ $client->name }}</h1>
 
+
                             <div class="d-flex justify-content-center justify-content-md-between text-secondary fs-12 mb-3">
                                 <div class="mr-2">
                                     @if( !empty(getAverageRating($client->id)))
@@ -60,9 +61,18 @@
 
                         <div class="text-lg-right text-center">
                             @if (Auth::check() && ($bookmarked_client = \App\Models\BookmarkedClient::where('user_id', auth()->user()->id)->where('client_user_id', $client->id)->first()) != null)
+                                @if($user->user_type=='freelancer')
                                 <a class="btn btn-secondary confirm-alert" href="javascript:void(0)" data-href="{{ route('bookmarked-clients.destroy', $bookmarked_client->id) }}" data-target="#unfollow-modal">Unfollow</a>
+                                @elseif($user->user_type=='agent')
+                                    <a class="btn btn-secondary confirm-alert" href="javascript:void(0)" data-href="{{ route('agent.bookmarked-clients.destroy', $bookmarked_client->id) }}" data-target="#unfollow-modal">Unfollow</a>
+                                @endif
+
                             @else
+                                @if($user->user_type =='freelancer')
                                 <a class="btn btn-primary" href="{{ route('bookmarked-clients.store', encrypt($client->id)) }}">{{ translate('Follow') }}</a>
+                                @elseif($user->user_type == 'agent')
+                                    <a class="btn btn-primary" href="{{ route('agent.bookmarked-clients.store', encrypt($client->id)) }}">{{ translate('Follow') }}</a>
+                                @endif
                             @endif
                         </div>
                     </div>

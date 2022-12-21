@@ -110,6 +110,35 @@
                         </div> <!-- end card-body -->
                     </div>
 
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-header">
+                            <h5 class="mb-0 h6">{{ translate('Import App Translations') }}</h5>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <form class="form-horizontal" action="{{ route('app-translations.importcsv') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <div class="form-group row">
+                                <div class="col-lg-3">
+                                    <label class="col-from-label">{{ translate('CSV Trasnlation File') }}</label>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="custom-file">
+                                        <label class="custom-file-label">
+                                            <input type="file" id="lang_file" name="lang_file"  class="custom-file-input" required>
+                                            <span class="custom-file-name">{{ translate('Choose .csv file') }}</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <button type="submit" class="btn btn-info">{{translate('Import')}}</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
                     <div class="card">
                         <div class="card-header">
                             <h5 class="mb-0 h6">{{translate('Set Default Language for System')}}</h5>

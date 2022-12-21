@@ -134,17 +134,33 @@
                                     </p>
                                     <div class="aiz-share"></div>
 								</div>
+
                                 <div class="mb-3">
                                     @if (Auth::check() && ($bookmarked_project = \App\Models\BookmarkedProject::where('user_id', auth()->user()->id)->where('project_id', $project->id)->first()) != null)
+                                        @if($user->user_type=='freelancer')
                                         <a class="btn btn-block btn-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1 confirm-alert" href="javascript:void(0)" data-href="{{ route('bookmarked-projects.destroy', $bookmarked_project->id) }}" data-target="#bookmark-remove-modal">
                                             <i class="las la-bookmark fs-16 fw-700"></i>
                                             <span>{{ translate('Remove Bookmark') }}</span>
                                         </a>
+                                        @elseif($user->user_type=='agent')
+                                            <a class="btn btn-block btn-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1 confirm-alert" href="javascript:void(0)" data-href="{{ route('company.bookmarked-projects.destroy', $bookmarked_project->id) }}" data-target="#bookmark-remove-modal">
+                                                <i class="las la-bookmark fs-16 fw-700"></i>
+                                                <span>{{ translate('Remove Bookmark') }}</span>
+                                            </a>
+                                        @endif
                                     @else
-                                        <a class="btn btn-block btn-outline-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1" href="{{ route('bookmarked-projects.store', $project->id)}}">
+                                            @if($user->user_type=='freelancer')
+
+                                        <a class="btn btn-block btn-outline-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1" href="{{route('bookmarked-projects.store',$project->id)}}">
                                             <i class="las la-bookmark fs-16 fw-700"></i>
                                             <span class="ml-2">{{ translate('Bookmark Project') }}</span>
                                         </a>
+                                        @elseif($user->user_type=='agent')
+                                            <a class="btn btn-block btn-outline-primary d-flex align-items-center justify-content-center fs-14 fw-700 rounded-1" href="{{route('company.bookmarked-projects.store',$project->id)}}">
+                                                <i class="las la-bookmark fs-16 fw-700"></i>
+                                                <span class="ml-2">{{ translate('Bookmark Project') }}</span>
+                                            </a>
+                                        @endif
                                     @endif
                                 </div>
                                 <div class="mb-4">

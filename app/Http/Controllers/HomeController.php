@@ -96,8 +96,10 @@ class HomeController extends Controller
 
         $country = Country::where('id',$project->country_id)->select('name')->first()->name;
         $city = City::where('id',$project->city_id)->select('name')->first()->name;
+       $user =  User::where('id',auth::id())->first('user_type');
 
-        return view('frontend.default.project-single', compact('project','country','city'));
+
+        return view('frontend.default.project-single', compact('project','country','city','user'));
     }
 
     //Show details info of specific project
@@ -146,7 +148,8 @@ class HomeController extends Controller
     {
         $client = User::where('user_name', $username)->first();
         $open_projects = Project::where('client_user_id', $client->id)->biddable()->open()->notcancel()->latest()->get();
-        return view('frontend.default.client-single', compact('client', 'open_projects'));
+        $user =  User::where('id',auth::id())->first('user_type');
+        return view('frontend.default.client-single', compact('client', 'open_projects','user'));
     }
 
     //Show all client's list to user
