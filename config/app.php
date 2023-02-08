@@ -164,7 +164,7 @@ return [
         Laravel\Socialite\SocialiteServiceProvider::class,
         Unicodeveloper\Paystack\PaystackServiceProvider::class,
         Anand\LaravelPaytmWallet\PaytmWalletServiceProvider::class,
-        MehediIitdu\CoreComponentRepository\CoreComponentRepositoryServiceProvider::class,
+
 
         /*
          * Package Service Providers...
@@ -178,6 +178,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Aws\Laravel\AwsServiceProvider::class,
 
     ],
 
@@ -234,6 +235,8 @@ return [
         'Carbon' => Illuminate\Support\Carbon::class,
         'Paystack' => Unicodeveloper\Paystack\Facades\Paystack::class,
         'PaytmWallet' => Anand\LaravelPaytmWallet\Facades\PaytmWallet::class,
+        'AWS' => Aws\Laravel\AwsFacade::class,
+        
     ],
 
 ];

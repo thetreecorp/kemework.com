@@ -1,1 +1,30 @@
 /*your custom css goes here*/
+
+/**TOPBAR***/
+.topbar{
+    padding-top: 7px;
+}
+
+.topbar i:hover{
+    cursor: pointer;
+}
+.iconsystem{
+    background: #fda706;
+    border-radius: 0 33px 0px 0px;
+}
+.iconsystem i{
+    font-size: 30px;
+    color: #c02127;
+}
+.topbar-right i{
+    font-size: 16px;
+    color: #fff;
+}
+
+.iconsystem .rounded-tr-full{
+    border: 2px solid #fda706 !important;
+}
+
+.aiz-header {
+    background: #fda706;
+}

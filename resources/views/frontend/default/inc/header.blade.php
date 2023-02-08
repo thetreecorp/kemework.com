@@ -1,13 +1,15 @@
 
 <div class="kemedar-top-and-sidebar">
     <!-- Kemedar Fixed Top Header & Sidebar Import Start -->
-    @include('frontend.default.kemedar.partials.topheader')
+    {{--@include('frontend.default.kemedar.partials.topheader') --}}
+
+    @include('frontend.default.inc.topbar')
     <!-- Kemedar Fixed Top Header & Sidebar Import End -->
 </div>
 
-    <header class="aiz-header bg-white @if(get_setting('header_stikcy') == 'on') sticky-top @endif">
+    <header class="aiz-header @if(get_setting('header_stikcy') == 'off') sticky-top @endif">
         <div class="aiz-navbar py-18px fs-14 position-relative">
-            <div class="container-fluid">
+            <div class="container">
                 <div class="d-flex align-items-center justify-content-between">
                     <div class="logo">
                         <a href="{{ route('home') }}" class="d-inline-block">
@@ -17,7 +19,7 @@
 
                     <div class="d-flex justify-content-between w-lg-84 pl-4">
                         <div class="search">
-                            <div class="front-header-search d-flex align-items-center bg-white px-3 px-lg-0">
+                            <div class="front-header-search d-flex align-items-center px-3 px-lg-0">
                                 <form action="{{ route('search') }}" method="GET" class="flex-grow-1">
                                     <div class="input-group">
                                         <a class="text-reset bg-soft-secondary fs-12 rounded-left d-lg-none p-2" href="javascript:void(0);" data-toggle="class-toggle" data-target=".front-header-search">
@@ -49,11 +51,11 @@
                                             </button>
 
                                             <li class="nav-item ml-xl-3" style="list-style-type:none;">
-                                            <a class="btn btn-primary rounded-1" href="http://kemework.com/search?keyword=&type=project">{{ translate(' Task') }}</a>
+                                            <a class="btn btn-primary rounded-1" href="{{url ('search?keyword=&type=project') }}">{{ translate(' Task') }}</a>
                                         </li>
 
                                         <li class="nav-item ml-xl-3" style="list-style-type:none;">
-                                            <a class="btn btn-primary rounded-1" href="http://kemework.com/search?keyword=&type=service">{{ translate(' Service') }}</a>
+                                            <a class="btn btn-primary rounded-1" href="{{ url('search?keyword=&type=service') }}">{{ translate(' Service') }}</a>
                                         </li>
                                         <style>
 

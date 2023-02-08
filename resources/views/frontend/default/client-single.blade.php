@@ -63,14 +63,14 @@
                             @if (Auth::check() && ($bookmarked_client = \App\Models\BookmarkedClient::where('user_id', auth()->user()->id)->where('client_user_id', $client->id)->first()) != null)
                                 @if($user->user_type=='freelancer')
                                 <a class="btn btn-secondary confirm-alert" href="javascript:void(0)" data-href="{{ route('bookmarked-clients.destroy', $bookmarked_client->id) }}" data-target="#unfollow-modal">Unfollow</a>
-                                @elseif($user->user_type=='agent')
+                                @elseif($user->user_type=='professional')
                                     <a class="btn btn-secondary confirm-alert" href="javascript:void(0)" data-href="{{ route('agent.bookmarked-clients.destroy', $bookmarked_client->id) }}" data-target="#unfollow-modal">Unfollow</a>
                                 @endif
 
                             @else
                                 @if($user->user_type =='freelancer')
                                 <a class="btn btn-primary" href="{{ route('bookmarked-clients.store', encrypt($client->id)) }}">{{ translate('Follow') }}</a>
-                                @elseif($user->user_type == 'agent')
+                                @elseif($user->user_type == 'professional')
                                     <a class="btn btn-primary" href="{{ route('agent.bookmarked-clients.store', encrypt($client->id)) }}">{{ translate('Follow') }}</a>
                                 @endif
                             @endif
