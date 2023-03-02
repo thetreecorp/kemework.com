@@ -260,8 +260,6 @@ Route::group(['middleware' => ['auth', 'verified', 'agent', 'packagePurchased']]
 
     Route::get('company/bidded-projects', 'AgentProjectController@bidded_projects')->name('agent.bidded_projects');
 
-
-
     //Route::get('/services', 'ServiceController@index')->name('service.index');
     Route::get('agent/service/create', 'AgentServiceController@create')->name('agent.service.create');
     Route::post('agent/service/store', 'AgentServiceController@store')->name('agent.service.store');
