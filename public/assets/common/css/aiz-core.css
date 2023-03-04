@@ -15,8 +15,8 @@
     --gray: #6c757d;
     --gray-light: #dadee6;
     --gray-dark: #343a40;
-    --primary: #377dff;
-    --hov-primary: #0069d9;
+    --primary: #c02127;
+    --hov-primary: #b11f24;
     --soft-hov-primary: #f2f7ff;
     --soft-primary: rgba(55, 125, 255, 0.15);
     --secondary: #8f97ab;
@@ -5466,10 +5466,10 @@ div.footable-loader > span.fooicon:after {
     display: block;
 }
 
-.modal-open .modal {
+/*.modal-open .modal {
     overflow-x: hidden;
     overflow-y: hidden;
-}
+}*/
 .modal-backdrop {
     background-color: #11151d;
 }
@@ -6358,8 +6358,8 @@ ul.apps a:hover i{
 
 /*header*/
 .aiz-header {
-    /* box-shadow: 0 10px 30px rgba(34, 44, 62, 0.05); */
-    border-bottom: 1px solid #dadee6;
+    /* box-shadow: 0 10px 30px rgba(34, 44, 62, 0.05); 
+    border-bottom: 1px solid #dadee6;*/
     box-shadow: 0px 3px 6px rgb(0 0 0 / 8%);
 }
 

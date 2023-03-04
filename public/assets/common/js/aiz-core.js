@@ -1828,6 +1828,22 @@ $.fn.toggleAttr = function (attr, attr1, attr2) {
                     $this.removeClass('d-none');
                 }
             });
+        },
+
+        showLoginPopup: function(){
+
+            $('.linkRegister').on('click' , function(e){
+                e.preventDefault();
+                $('#formLogin').hide();
+                $('#formRegister').show();
+            });
+
+            $("#quickLogin").on('shown.bs.modal', function(e) {
+                var type = e.relatedTarget.hash;
+                $('#formLogin').hide();
+                $('#formRegister').hide();
+                $(type).show();
+            });    
         }
     };
 
@@ -1856,7 +1872,8 @@ $.fn.toggleAttr = function (attr, attr1, attr2) {
     AIZ.extra.trimAppUrl();
     AIZ.extra.acceptCookie();
     AIZ.extra.setSession();
-    AIZ.extra.showSessionPopup()
+    AIZ.extra.showSessionPopup();
+    AIZ.extra.showLoginPopup();
 
     AIZ.plugins.metismenu();
     AIZ.plugins.bootstrapSelect();
