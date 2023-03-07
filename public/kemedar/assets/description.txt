@@ -1,0 +1,24 @@
+[CATEGORY] for [PURPOSE] Suitable for [SUITABLECATEGORIES]
+The [CATEGORY] is located in [STATE], [CITY], [DISTRICT]
+The [CATEGORY] is in [COMPOUNDNAME] in [STATE], [CITY], [DISTRICT]. 
+The address is [ADDRESS] [DIRECTOWNER AGENTOFOWNER],[CONTACTUSTOKNOWTHEPRICE]
+The price of this [CATEGORY] is [SALEPRICE] [CURRENCY]... This means that the unit price is [UNITPRICE][UNIT]
+The price is [NEGOTIABLE] [NOTNEGOTIABLE] 
+Credit [PAYMENT] for this [CATEGORY] is available. 
+You will pay [UPFRONTPAYMENT] as Upfront payment, [MONTHLYPAYMENT] monthly, [QUARTERLYPAYMENT] quarterly every 3 months, [YEARLYPAYMENT] every year for [PERIOD] [months]/[years]
+For this [CATEGORY], you will pay [DUES] as Dues, Maintenance or Taxes every [YEAR/MONTH]
+[This Property is Timeshare System]
+The total area size of this [CATEGORY] is [TOTALSIZEAREA] [TOTALSIZEAREAUNIT] and the net area size is [NETSIZEAREA] [NETSIZEAREAUNIT]
+The total number of floors is [TOTALNUMBEROFFLOORS] . The [CATEGORY] in the floor number [FLOORNUMBER]
+The [CATEGORY] in the [GROUNDFLOOR] 
+The [CATEGORY] has [BEDROOMS] bedrooms, [RECEPTION] Receptions and [BATHROOMS] bathrooms.
+The [CATEGORY] is [STATUS] . The [CATEGORY] is built on [YEAROFBUILDING] [The property is READYFORDELIVERY]
+The [CATEGORY] will be ready for delivery on [DATEOFDELIVERY]
+The [CATEGORY] is [FINISHINGSTATUS]
+The [CATEGORY] is featured of [AMENITIES]
+The [CATEGORY] is near to the following: [DISTANCE]
+The [CATEGORY] is [FRONTAGE] frontage
+It has view of [VIEW]. I would like to say also that The [CATEGORY] is [TAG]
+[LISTPUBLISHER]
+You can reach me in many ways. You can send a message for me on Kemedar or we can chat if you see me online on Kemedar or if you like to talk phone call, 
+Kindly click on the button direct phone for that property so you can call me directly
