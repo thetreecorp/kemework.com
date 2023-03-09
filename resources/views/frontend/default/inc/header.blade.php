@@ -175,7 +175,7 @@
 
 
 
-                                                <img class="hire_image"  src="public/uploads/images/img-menu-hire.b6008fba.png" alt="">
+                                                <img class="hire_image"  src="{{my_asset('uploads/images/img-menu-hire.b6008fba.png')}}" alt="">
                                             </div>
                                         </li>
 

@@ -63,14 +63,21 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap">
     <link rel="stylesheet" href="{{ my_asset('assets/common/css/kemedar-icon.css') }}">
     <link rel="stylesheet" href="{{ my_asset('assets/common/css/vendors.css') }}">
-    @if($lang != null && $lang->rtl == 1)
     <link rel="stylesheet" href="{{ my_asset('assets/common/css/bootstrap-rtl.min.css') }}">
-    @endif
     <link rel="stylesheet" href="{{ my_asset('assets/common/css/aiz-core.css') }}">
     <link rel="stylesheet" href="{{ my_asset('assets/frontend/default/css/custom.css') }}">
     <link rel="stylesheet" href="{{ my_asset('assets/common/css/jssocials.css') }}">
     <link rel="stylesheet" href="{{ my_asset('assets/common/css/jssocials-theme-flat.css') }}">
 
+
+
+    <link rel="stylesheet" type="text/css" href="{{ my_asset('kemedar/assets/css/jquery-ui.css') }}">
+{{--    <!-- animate css -->--}}
+    <link rel="stylesheet" type="text/css" href="{{ my_asset('kemedar/assets/css/animate.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ my_asset('kemedar/assets/css/bootstrap.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ my_asset('kemedar/assets/css/color1.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="{{ my_asset('kemedar/assets/css/custom.css') }}" rel="stylesheet" type="text/css" />
 
 
 

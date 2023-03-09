@@ -1,5 +1,5 @@
 <!-- kemedar top header css start -->
-<link rel="stylesheet" href="{{ asset('footer_section/css/style.css') }}">
+<link rel="stylesheet" href="{{ my_asset('footer_section/css/style.css') }}">
 <!-- kemedar top header css end -->
 
 <style>
@@ -17,7 +17,7 @@
                 <div class="col-xl-3">
                     <div class="footer-details text-center">
                         <a href="#">
-                            <img src="{{ asset('kemedar/assets/images/brand/kemedar.png') }}" alt=""
+                            <img src="{{ my_asset('kemedar/assets/images/brand/kemedar.png') }}" alt=""
                                  style="width: 40% !important; margin: 0 auto;">
                         </a>
                         <p> Kemedar Prop-tech system is a real estate marketplace that will do revolutionary changes in the way people are selling, buying, renting, finishing, investing, or promoting their properties whether they are individuals or companies
@@ -126,7 +126,7 @@
                                     <div class="media">
                                         <a href="#">
                                             <div class="img-overlay">
-                                                <img src="{{ asset('kemedar/assets/images/brand/kemework.png') }}"
+                                                <img src="{{ my_asset('kemedar/assets/images/brand/kemework.png') }}"
                                                      alt="">
                                             </div>
                                         </a>
@@ -140,7 +140,7 @@
                                     <div class="media">
                                         <a href="#">
                                             <div class="img-overlay">
-                                                <img src="{{ asset('kemedar/assets/images/brand/kemetro.png') }}"
+                                                <img src="{{ my_asset('kemedar/assets/images/brand/kemetro.png') }}"
                                                      alt="">
                                             </div>
                                         </a>
@@ -154,7 +154,7 @@
                                     <div class="media">
                                         <a href="#">
                                             <div class="img-overlay">
-                                                <img src="{{ asset('kemedar/assets/images/brand/reit.png') }}"
+                                                <img src="{{ my_asset('kemedar/assets/images/brand/reit.png') }}"
                                                      alt="">
                                             </div>
                                         </a>
@@ -195,7 +195,7 @@
                                 <ul class="benefit-list" style="margin-top: 10px !important;">
                                     <li onmouseenter="properSubmenushow()" onmouseleave="properSubmenuhide()">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/find/Icon-01.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/find/Icon-01.png"
                                                  class="img-fluid" alt="">
                                         </i>
                                         <a href="">
@@ -210,7 +210,7 @@
 
                                                 <li class="brn">
                                                     <i>
-                                                        <img src="{{ asset('footer_section') }}/images/property/Icon-01.png"
+                                                        <img src="{{ my_asset('footer_section') }}/images/property/Icon-01.png"
                                                              class="img-fluid" alt="">
                                                     </i>
                                                     <a href="">
@@ -219,7 +219,7 @@
                                                 </li>
                                                 <li class="brn">
                                                     <i>
-                                                        <img src="{{ asset('footer_section') }}/images/property/Icon-02.png"
+                                                        <img src="{{ my_asset('footer_section') }}/images/property/Icon-02.png"
                                                              class="img-fluid" alt="">
                                                     </i>
                                                     <a href="">
@@ -228,7 +228,7 @@
                                                 </li>
                                                 <li class="brn">
                                                     <i>
-                                                        <img src="{{ asset('footer_section') }}/images/property/Icon-04.png"
+                                                        <img src="{{ my_asset('footer_section') }}/images/property/Icon-04.png"
                                                              class="img-fluid" alt="">
                                                     </i>
                                                     <a href="">
@@ -237,7 +237,7 @@
                                                 </li>
                                                 <li class="brn">
                                                     <i>
-                                                        <img src="{{ asset('footer_section') }}/images/property/Icon-05.png"
+                                                        <img src="{{ my_asset('footer_section') }}/images/property/Icon-05.png"
                                                              class="img-fluid" alt="">
                                                     </i>
                                                     <a href="">
@@ -258,7 +258,7 @@
                                     <li class="" style="color:#000 !important;"
                                         onmouseenter="taskerSubmenushow()" onmouseleave="taskerSubmenuhide()">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/find/Icon-02.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/find/Icon-02.png"
                                                  class="img-fluid" alt="">
                                         </i>
 
@@ -281,7 +281,7 @@
                                     </li>
                                     <li class="brn">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/find/Icon-03.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/find/Icon-03.png"
                                                  class="img-fluid" alt="">
                                         </i>
                                         <a href="">
@@ -291,7 +291,7 @@
                                     <br>
                                     <li class="">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/find/Icon-04.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/find/Icon-04.png"
                                                  class="img-fluid" alt="">
                                         </i>
                                         <a href="">
@@ -300,7 +300,7 @@
                                     </li>
                                     <li class="">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/find/Icon-05.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/find/Icon-05.png"
                                                  class="img-fluid" alt="">
                                         </i>
                                         <a href="">
@@ -309,7 +309,7 @@
                                     </li>
                                     <li class="brn">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/find/Icon-12.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/find/Icon-12.png"
                                                  class="img-fluid" alt="">
                                         </i>
                                         <a href="">
@@ -318,7 +318,7 @@
                                     </li>
                                     <li class="">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/find/Icon-10.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/find/Icon-10.png"
                                                  class="img-fluid" style="width:20px" alt="">
                                         </i>
                                         <a href="hire-technician/carpenter.html">
@@ -328,7 +328,7 @@
                                     <li style="color:#000 !important;" onmouseenter="productSubmenushow()"
                                         onmouseleave="productSubmenuhide()">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/find/Icon-09.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/find/Icon-09.png"
                                                  class="img-fluid" style="width:20px" alt="">
                                         </i>
                                         <a href="hire-technician/lawyer.html">
@@ -343,7 +343,7 @@
                                                 <ul>
                                                     <li>
                                                         <i>
-                                                            <img src="{{ asset('footer_section') }}/images/product/Icon-01.png"
+                                                            <img src="{{ my_asset('footer_section') }}/images/product/Icon-01.png"
                                                                  alt="">
                                                         </i>
                                                         <a href="">
@@ -352,7 +352,7 @@
                                                     </li>
                                                     <li>
                                                         <i>
-                                                            <img src="{{ asset('footer_section') }}/images/product/Icon-02.png"
+                                                            <img src="{{ my_asset('footer_section') }}/images/product/Icon-02.png"
                                                                  alt="">
                                                         </i>
                                                         <a href="">
@@ -361,7 +361,7 @@
                                                     </li>
                                                     <li>
                                                         <i>
-                                                            <img src="{{ asset('footer_section') }}/images/product/Icon-03.png"
+                                                            <img src="{{ my_asset('footer_section') }}/images/product/Icon-03.png"
                                                                  alt="">
                                                         </i>
                                                         <a href="">
@@ -380,7 +380,7 @@
                                                     </li>
                                                     <li>
                                                         <i>
-                                                            <img src="{{ asset('footer_section') }}/images/product/Icon-05.png"
+                                                            <img src="{{ my_asset('footer_section') }}/images/product/Icon-05.png"
                                                                  alt="">
                                                         </i>
                                                         <a href="">
@@ -389,7 +389,7 @@
                                                     </li>
                                                     <li>
                                                         <i>
-                                                            <img src="{{ asset('footer_section') }}/images/product/Icon-06.png"
+                                                            <img src="{{ my_asset('footer_section') }}/images/product/Icon-06.png"
                                                                  alt="">
                                                         </i>
                                                         <a href="">
@@ -398,7 +398,7 @@
                                                     </li>
                                                     <li>
                                                         <i>
-                                                            <img src="{{ asset('footer_section') }}/images/product/Icon-07.png"
+                                                            <img src="{{ my_asset('footer_section') }}/images/product/Icon-07.png"
                                                                  alt="">
                                                         </i>
                                                         <a href="">
@@ -407,7 +407,7 @@
                                                     </li>
                                                     <li>
                                                         <i>
-                                                            <img src="{{ asset('footer_section') }}/images/product/Icon-08.png"
+                                                            <img src="{{ my_asset('footer_section') }}/images/product/Icon-08.png"
                                                                  alt="">
                                                         </i>
                                                         <a href="">
@@ -416,7 +416,7 @@
                                                     </li>
                                                     <li>
                                                         <i>
-                                                            <img src="{{ asset('footer_section') }}/images/product/Icon-09.png"
+                                                            <img src="{{ my_asset('footer_section') }}/images/product/Icon-09.png"
                                                                  alt="">
                                                         </i>
                                                         <a href="">
@@ -425,7 +425,7 @@
                                                     </li>
                                                     <li>
                                                         <i>
-                                                            <img src="{{ asset('footer_section') }}/images/product/Icon-10.png"
+                                                            <img src="{{ my_asset('footer_section') }}/images/product/Icon-10.png"
                                                                  alt="">
                                                         </i>
                                                         <a href="">
@@ -435,14 +435,14 @@
                                                 </ul>
                                             </div>
                                             <div class="left-right-submenu">
-                                                <img src="{{ asset('footer_section') }}/images/products.png"
+                                                <img src="{{ my_asset('footer_section') }}/images/products.png"
                                                      width="100%" height="auto" alt="">
                                             </div>
                                         </div>
                                     </li>
                                     <li class="brn">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/find/Icon-08.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/find/Icon-08.png"
                                                  class="img-fluid" style="width:20px" alt="">
                                         </i>
                                         <a href="hire-technician/decorist.html">
@@ -451,7 +451,7 @@
                                     </li>
                                     <li class="">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/find/Icon-07.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/find/Icon-07.png"
                                                  class="img-fluid" style="width:20px" alt="">
                                         </i>
                                         <a href="hire-technician/painter.html">
@@ -461,7 +461,7 @@
 
                                     <li class="">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/find/Icon-06.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/find/Icon-06.png"
                                                  class="img-fluid" style="width:20px" alt="">
                                         </i>
                                         <a href="hire-technician/carpenter.html">
@@ -470,7 +470,7 @@
                                     </li>
                                     <li class="brn" style="color:#000 !important;">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/find/Icon-11.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/find/Icon-11.png"
                                                  class="img-fluid" style="width:20px" alt="">
                                         </i>
                                         <a href="hire-technician/lawyer.html">
@@ -485,7 +485,7 @@
                             <a href="#">Add</a>
                             <div class=" benefit-div find-div " id="addDiv" onmouseenter="addDivshow()"
                                  onmouseleave="addDivhide()"
-                                 style="background: url('{{ asset('footer_section') }}/images/add.png') no-repeat 50% 88%/23em , #ededed;">
+                                 style="background: url('{{ my_asset('footer_section') }}/images/add.png') no-repeat 50% 88%/23em , #ededed;">
                                 <div>
                                     <span class="active-span">{{ translate('Add') }}</span>
                                 </div>
@@ -494,7 +494,7 @@
                                         ">
                                     <li>
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/add/Icon-01.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/add/Icon-01.png"
                                                  class="img-fluid" alt="">
                                         </i>
                                         <a href="">
@@ -503,7 +503,7 @@
                                     </li>
                                     <li class="" style="color:#000 !important;">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/add/Icon-02.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/add/Icon-02.png"
                                                  class="img-fluid" alt="">
                                         </i>
 
@@ -513,7 +513,7 @@
                                     </li>
                                     <li class="brn">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/add/Icon-03.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/add/Icon-03.png"
                                                  class="img-fluid" alt="">
                                         </i>
                                         <a href="">
@@ -523,7 +523,7 @@
                                     <br>
                                     <li class="">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/add/Icon-06.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/add/Icon-06.png"
                                                  class="img-fluid" alt="">
                                         </i>
                                         <a href="">
@@ -532,7 +532,7 @@
                                     </li>
                                     <li class="">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/add/Icon-07.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/add/Icon-07.png"
                                                  class="img-fluid" alt="">
                                         </i>
                                         <a href="">
@@ -541,7 +541,7 @@
                                     </li>
                                     <li class="brn">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/add/Icon-08.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/add/Icon-08.png"
                                                  class="img-fluid" alt="">
                                         </i>
                                         <a href="">
@@ -550,7 +550,7 @@
                                     </li>
                                     <li class="">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/add/Icon-09.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/add/Icon-09.png"
                                                  class="img-fluid" style="width:20px" alt="">
                                         </i>
                                         <a href="hire-technician/carpenter.html">
@@ -559,7 +559,7 @@
                                     </li>
                                     <li class="" style="color:#000 !important;">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/add/Icon-04.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/add/Icon-04.png"
                                                  class="img-fluid" style="width:20px" alt="">
                                         </i>
                                         <a href="hire-technician/lawyer.html">
@@ -568,7 +568,7 @@
                                     </li>
                                     <li class="brn">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/add/Icon-05.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/add/Icon-05.png"
                                                  class="img-fluid" style="width:20px" alt="">
                                         </i>
                                         <a href="hire-technician/decorist.html">
@@ -577,7 +577,7 @@
                                     </li>
                                     <li class="">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/add/Icon-11.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/add/Icon-11.png"
                                                  class="img-fluid" style="width:20px" alt="">
                                         </i>
                                         <a href="hire-technician/painter.html">
@@ -586,7 +586,7 @@
                                     </li>
                                     <li class="">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/add/Icon-10.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/add/Icon-10.png"
                                                  class="img-fluid" style="width:20px" alt="">
                                         </i>
                                         <a href="hire-technician/carpenter.html">
@@ -595,7 +595,7 @@
                                     </li>
                                     <li class="brn" style="color:#000 !important;">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/add/Icon-12.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/add/Icon-12.png"
                                                  class="img-fluid" style="width:20px" alt="">
                                         </i>
                                         <a href="hire-technician/lawyer.html">
@@ -604,7 +604,7 @@
                                     </li>
                                     <li class="" style="color:#000 !important;">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/add/Icon-14.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/add/Icon-14.png"
                                                  class="img-fluid" style="width:20px" alt="">
                                         </i>
                                         <a href="hire-technician/lawyer.html">
@@ -613,7 +613,7 @@
                                     </li>
                                     <li class="" style="color:#000 !important;">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/add/Icon-13.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/add/Icon-13.png"
                                                  class="img-fluid" style="width:20px" alt="">
                                         </i>
                                         <a href="hire-technician/lawyer.html">
@@ -627,7 +627,7 @@
                             <a href="#">Invest</a>
                             <div class=" benefit-div find-div " id="investDiv" onmouseenter="investDivshow()"
                                  onmouseleave="investDivhide()"
-                                 style="background: url('{{ asset('footer_section') }}/images/invest.png') no-repeat 50% 88%/23em , #ededed;">
+                                 style="background: url('{{ my_asset('footer_section') }}/images/invest.png') no-repeat 50% 88%/23em , #ededed;">
                                 <div>
                                     <span class="active-span">{{ translate('Invest') }}</span>
                                 </div>
@@ -635,7 +635,7 @@
             ">
                                     <li>
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/invest/Icon-01.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/invest/Icon-01.png"
                                                  class="img-fluid" alt="">
                                         </i>
                                         <a href="">
@@ -644,7 +644,7 @@
                                     </li>
                                     <li class="" style="color:#000 !important;">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/invest/Icon-02.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/invest/Icon-02.png"
                                                  class="img-fluid" alt="">
                                         </i>
 
@@ -655,7 +655,7 @@
 
                                     <li class="brn">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/invest/Icon-03.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/invest/Icon-03.png"
                                                  class="img-fluid" alt="">
                                         </i>
                                         <a href="">
@@ -665,7 +665,7 @@
                                     <br>
                                     <li class="">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/invest/Icon-04.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/invest/Icon-04.png"
                                                  class="img-fluid" alt="">
                                         </i>
                                         <a href="">
@@ -674,7 +674,7 @@
                                     </li>
                                     <li class="">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/invest/Icon-05.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/invest/Icon-05.png"
                                                  class="img-fluid" alt="">
                                         </i>
                                         <a href="">
@@ -683,7 +683,7 @@
                                     </li>
                                     <li class="brn">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/invest/Icon-06.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/invest/Icon-06.png"
                                                  class="img-fluid" alt="">
                                         </i>
                                         <a href="">
@@ -692,7 +692,7 @@
                                     </li>
                                     <li class="">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/invest/Icon-07.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/invest/Icon-07.png"
                                                  class="img-fluid" style="width:20px" alt="">
                                         </i>
                                         <a href="hire-technician/carpenter.html">
@@ -701,7 +701,7 @@
                                     </li>
                                     <li class="" style="color:#000 !important;">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/invest/Icon-08.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/invest/Icon-08.png"
                                                  class="img-fluid" style="width:20px" alt="">
                                         </i>
                                         <a href="hire-technician/lawyer.html">
@@ -710,7 +710,7 @@
                                     </li>
                                     <li class="brn" style="color:#000 !important;">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/invest/Icon-09.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/invest/Icon-09.png"
                                                  class="img-fluid" style="width:20px" alt="">
                                         </i>
                                         <a href="hire-technician/lawyer.html">
@@ -733,7 +733,7 @@
             ">
                                     <li>
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/connect/Icon-01.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/connect/Icon-01.png"
                                                  class="img-fluid" alt="">
                                         </i>
                                         <a href="">
@@ -742,7 +742,7 @@
                                     </li>
                                     <li class="" style="color:#000 !important;">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/connect/Icon-02.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/connect/Icon-02.png"
                                                  class="img-fluid" alt="">
                                         </i>
 
@@ -753,7 +753,7 @@
 
                                     <li class="brn">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/connect/Icon-03.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/connect/Icon-03.png"
                                                  class="img-fluid" alt="">
                                         </i>
                                         <a href="">
@@ -763,7 +763,7 @@
                                     <br>
                                     <li class="">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/connect/Icon-04.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/connect/Icon-04.png"
                                                  class="img-fluid" alt="">
                                         </i>
                                         <a href="">
@@ -772,7 +772,7 @@
                                     </li>
                                     <li class="">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/connect/Icon-05.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/connect/Icon-05.png"
                                                  class="img-fluid" alt="">
                                         </i>
                                         <a href="">
@@ -790,7 +790,7 @@
 
                             <div class=" benefit-div find-div " id="knowDiv" onmouseenter="knowDivshow()"
                                  onmouseleave="knowDivhide()"
-                                 style="background: url('{{ asset('footer_section') }}/images/know.png') no-repeat 50% 88%/23em , #ededed;">
+                                 style="background: url('{{ my_asset('footer_section') }}/images/know.png') no-repeat 50% 88%/23em , #ededed;">
                                 <div>
                                     <span class="active-span">{{ translate('Know') }}</span>
                                 </div>
@@ -798,7 +798,7 @@
             ">
                                     <li>
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/know/Icon-01.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/know/Icon-01.png"
                                                  class="img-fluid" alt="">
                                         </i>
                                         <a href="">
@@ -807,7 +807,7 @@
                                     </li>
                                     <li class="" style="color:#000 !important;">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/know/Icon-02.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/know/Icon-02.png"
                                                  class="img-fluid" alt="">
                                         </i>
 
@@ -818,7 +818,7 @@
 
                                     <li class="brn">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/know/Icon-03.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/know/Icon-03.png"
                                                  class="img-fluid" alt="">
                                         </i>
                                         <a href="">
@@ -828,7 +828,7 @@
                                     <br>
                                     <li class="">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/know/Icon-04.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/know/Icon-04.png"
                                                  class="img-fluid" alt="">
                                         </i>
                                         <a href="">
@@ -837,7 +837,7 @@
                                     </li>
                                     <li class="">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/know/Icon-05.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/know/Icon-05.png"
                                                  class="img-fluid" alt="">
                                         </i>
                                         <a href="">
@@ -846,7 +846,7 @@
                                     </li>
                                     <li class="brn">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/know/Icon-06.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/know/Icon-06.png"
                                                  class="img-fluid" alt="">
                                         </i>
                                         <a href="">
@@ -855,7 +855,7 @@
                                     </li>
                                     <li class="">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/know/Icon-07.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/know/Icon-07.png"
                                                  class="img-fluid" alt="">
                                         </i>
                                         <a href="">
@@ -872,7 +872,7 @@
                             <a href="#">Learn</a>
                             <div class=" benefit-div find-div " id="learnDiv" onmouseenter="learnDivshow()"
                                  onmouseleave="learnDivhide()"
-                                 style="background: url('{{ asset('footer_section') }}/images/learn.png') no-repeat 50% 88%/23em , #ededed;">
+                                 style="background: url('{{ my_asset('footer_section') }}/images/learn.png') no-repeat 50% 88%/23em , #ededed;">
                                 <div>
                                     <span class="active-span">{{ translate('Learn') }}</span>
                                 </div>
@@ -880,7 +880,7 @@
             ">
                                     <li onmouseenter="consDivshow()" onmouseleave="consDivhide()">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/find/Icon-01.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/find/Icon-01.png"
                                                  class="img-fluid" alt="">
                                         </i>
                                         <a href="">
@@ -895,7 +895,7 @@
 
                                                 <li class="brn">
                                                     <i>
-                                                        <img src="{{ asset('footer_section') }}/images/property/Icon-01.png"
+                                                        <img src="{{ my_asset('footer_section') }}/images/property/Icon-01.png"
                                                              class="img-fluid" alt="">
                                                     </i>
                                                     <a href="">
@@ -904,7 +904,7 @@
                                                 </li>
                                                 <li class="brn">
                                                     <i>
-                                                        <img src="{{ asset('footer_section') }}/images/property/Icon-02.png"
+                                                        <img src="{{ my_asset('footer_section') }}/images/property/Icon-02.png"
                                                              class="img-fluid" alt="">
                                                     </i>
                                                     <a href="">
@@ -913,7 +913,7 @@
                                                 </li>
                                                 <li class="brn">
                                                     <i>
-                                                        <img src="{{ asset('footer_section') }}/images/property/Icon-04.png"
+                                                        <img src="{{ my_asset('footer_section') }}/images/property/Icon-04.png"
                                                              class="img-fluid" alt="">
                                                     </i>
                                                     <a href="">
@@ -922,7 +922,7 @@
                                                 </li>
                                                 <li class="brn">
                                                     <i>
-                                                        <img src="{{ asset('footer_section') }}/images/property/Icon-05.png"
+                                                        <img src="{{ my_asset('footer_section') }}/images/property/Icon-05.png"
                                                              class="img-fluid" alt="">
                                                     </i>
                                                     <a href="">
@@ -931,7 +931,7 @@
                                                 </li>
                                                 <li class="brn">
                                                     <i>
-                                                        <img src="{{ asset('footer_section') }}/images/property/Icon-05.png"
+                                                        <img src="{{ my_asset('footer_section') }}/images/property/Icon-05.png"
                                                              class="img-fluid" alt="">
                                                     </i>
                                                     <a href="">
@@ -941,7 +941,7 @@
 
                                                 <li class="brn">
                                                     <i>
-                                                        <img src="{{ asset('footer_section') }}/images/property/Icon-05.png"
+                                                        <img src="{{ my_asset('footer_section') }}/images/property/Icon-05.png"
                                                              class="img-fluid" alt="">
                                                     </i>
                                                     <a href="">
@@ -950,7 +950,7 @@
                                                 </li>
                                                 <li class="brn">
                                                     <i>
-                                                        <img src="{{ asset('footer_section') }}/images/property/Icon-05.png"
+                                                        <img src="{{ my_asset('footer_section') }}/images/property/Icon-05.png"
                                                              class="img-fluid" alt="">
                                                     </i>
                                                     <a href="">
@@ -963,7 +963,7 @@
                                     <li class="" onmouseenter="HomeDSubmenushow()"
                                         onmouseleave="HomeDSubmenuhide()" style="color:#000 !important;">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/find/Icon-02.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/find/Icon-02.png"
                                                  class="img-fluid" alt="">
                                         </i>
 
@@ -1056,7 +1056,7 @@
                                     <li class="brn" onmouseenter="rebSubmenushow()"
                                         onmouseleave="rebSubmenuhide()">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/find/Icon-02.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/find/Icon-02.png"
                                                  class="img-fluid" alt="">
                                         </i>
                                         <a href="">
@@ -1109,7 +1109,7 @@
                                     <br>
                                     <li onmouseenter="hdhDivshow()" onmouseleave="hdhDivhide()">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/find/Icon-09.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/find/Icon-09.png"
                                                  class="img-fluid" alt="">
                                         </i>
                                         <a href="">
@@ -1124,7 +1124,7 @@
 
                                                 <li class="">
                                                     <i>
-                                                        <img src="{{ asset('footer_section') }}/images/product/Icon-01.png"
+                                                        <img src="{{ my_asset('footer_section') }}/images/product/Icon-01.png"
                                                              class="img-fluid" alt="">
                                                     </i>
                                                     <a href="">
@@ -1133,7 +1133,7 @@
                                                 </li>
                                                 <li class="">
                                                     <i>
-                                                        <img src="{{ asset('footer_section') }}/images/product/Icon-02.png"
+                                                        <img src="{{ my_asset('footer_section') }}/images/product/Icon-02.png"
                                                              class="img-fluid" alt="">
                                                     </i>
                                                     <a href="">
@@ -1167,7 +1167,7 @@
                                     <li class="brn" onmouseenter="kemeappDivshow()"
                                         onmouseleave="kemeappDivhide()">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/mobile/Icon-01.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/mobile/Icon-01.png"
                                                  class="img-fluid" alt="">
                                         </i>
                                         <a href="">
@@ -1186,7 +1186,7 @@
                                                     </h6>
                                                     <a href=""
                                                        style="display: inline !important; padding: 0px !important;">
-                                                        <img src="{{ asset('footer_section') }}/images/google-play.svg"
+                                                        <img src="{{ my_asset('footer_section') }}/images/google-play.svg"
                                                              width="75px" alt="">
 
                                                     </a>
@@ -1194,7 +1194,7 @@
                                                         style="display: inline !important; padding: 0px !important;">or</span>
                                                     <a href=""
                                                        style="display: inline !important; padding: 0px !important;  margin-left: 8px;">
-                                                        <img src="{{ asset('footer_section') }}/images/app-store.svg"
+                                                        <img src="{{ my_asset('footer_section') }}/images/app-store.svg"
                                                              width="63px" alt="">
 
                                                     </a>
@@ -1206,7 +1206,7 @@
                                     <li class="brn" onmouseenter="kemetoappDivshow()"
                                         onmouseleave="kemetoappDivhide()" style="color:#000 !important;">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/mobile/Icon-02.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/mobile/Icon-02.png"
                                                  class="img-fluid" alt="">
                                         </i>
 
@@ -1226,7 +1226,7 @@
                                                     </h6>
                                                     <a href=""
                                                        style="display: inline !important; padding: 0px !important;">
-                                                        <img src="{{ asset('footer_section') }}/images/google-play.svg"
+                                                        <img src="{{ my_asset('footer_section') }}/images/google-play.svg"
                                                              width="75px" alt="">
 
                                                     </a>
@@ -1234,7 +1234,7 @@
                                                         style="display: inline !important; padding: 0px !important;">or</span>
                                                     <a href=""
                                                        style="display: inline !important; padding: 0px !important;  margin-left: 8px;">
-                                                        <img src="{{ asset('footer_section') }}/images/app-store.svg"
+                                                        <img src="{{ my_asset('footer_section') }}/images/app-store.svg"
                                                              width="63px" alt="">
 
                                                     </a>
@@ -1246,7 +1246,7 @@
                                     <li class="brn" onmouseenter="kemetroappDivshow()"
                                         onmouseleave="kemetroappDivhide()">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/mobile/Icon-03.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/mobile/Icon-03.png"
                                                  class="img-fluid" alt="">
                                         </i>
                                         <a href="">
@@ -1265,7 +1265,7 @@
                                                     </h6>
                                                     <a href=""
                                                        style="display: inline !important; padding: 0px !important;">
-                                                        <img src="{{ asset('footer_section') }}/images/google-play.svg"
+                                                        <img src="{{ my_asset('footer_section') }}/images/google-play.svg"
                                                              width="75px" alt="">
 
                                                     </a>
@@ -1273,7 +1273,7 @@
                                                         style="display: inline !important; padding: 0px !important;">or</span>
                                                     <a href=""
                                                        style="display: inline !important; padding: 0px !important;  margin-left: 8px;">
-                                                        <img src="{{ asset('footer_section') }}/images/app-store.svg"
+                                                        <img src="{{ my_asset('footer_section') }}/images/app-store.svg"
                                                              width="63px" alt="">
 
                                                     </a>
@@ -1286,7 +1286,7 @@
                                     <li class="brn" onmouseenter="kemenewsappDivshow()"
                                         onmouseleave="kemenewsappDivhide()">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/mobile/Icon-04.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/mobile/Icon-04.png"
                                                  class="img-fluid" alt="">
                                         </i>
                                         <a href="">
@@ -1305,7 +1305,7 @@
                                                     </h6>
                                                     <a href=""
                                                        style="display: inline !important; padding: 0px !important;">
-                                                        <img src="{{ asset('footer_section') }}/images/google-play.svg"
+                                                        <img src="{{ my_asset('footer_section') }}/images/google-play.svg"
                                                              width="75px" alt="">
 
                                                     </a>
@@ -1313,7 +1313,7 @@
                                                         style="display: inline !important; padding: 0px !important;">or</span>
                                                     <a href=""
                                                        style="display: inline !important; padding: 0px !important;  margin-left: 8px;">
-                                                        <img src="{{ asset('footer_section') }}/images/app-store.svg"
+                                                        <img src="{{ my_asset('footer_section') }}/images/app-store.svg"
                                                              width="63px" alt="">
 
                                                     </a>
@@ -1325,7 +1325,7 @@
                                     <li class="brn" onmouseenter="kemeacaappDivshow()"
                                         onmouseleave="kemeacaappDivhide()">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/mobile/Icon-05.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/mobile/Icon-05.png"
                                                  class="img-fluid" alt="">
                                         </i>
                                         <a href="">
@@ -1344,7 +1344,7 @@
                                                     </h6>
                                                     <a href=""
                                                        style="display: inline !important; padding: 0px !important;">
-                                                        <img src="{{ asset('footer_section') }}/images/google-play.svg"
+                                                        <img src="{{ my_asset('footer_section') }}/images/google-play.svg"
                                                              width="75px" alt="">
 
                                                     </a>
@@ -1352,7 +1352,7 @@
                                                         style="display: inline !important; padding: 0px !important;">or</span>
                                                     <a href=""
                                                        style="display: inline !important; padding: 0px !important;  margin-left: 8px;">
-                                                        <img src="{{ asset('footer_section') }}/images/app-store.svg"
+                                                        <img src="{{ my_asset('footer_section') }}/images/app-store.svg"
                                                              width="63px" alt="">
 
                                                     </a>
@@ -1364,7 +1364,7 @@
                                     <li class="brn" onmouseenter="messengerappDivshow()"
                                         onmouseleave="messengerappDivhide()">
                                         <i>
-                                            <img src="{{ asset('footer_section') }}/images/mobile/Icon-01.png"
+                                            <img src="{{ my_asset('footer_section') }}/images/mobile/Icon-01.png"
                                                  class="img-fluid" alt="">
                                         </i>
                                         <a href="">
@@ -1383,7 +1383,7 @@
                                                     </h6>
                                                     <a href=""
                                                        style="display: inline !important; padding: 0px !important;">
-                                                        <img src="{{ asset('footer_section') }}/images/google-play.svg"
+                                                        <img src="{{ my_asset('footer_section') }}/images/google-play.svg"
                                                              width="75px" alt="">
 
                                                     </a>
@@ -1391,7 +1391,7 @@
                                                         style="display: inline !important; padding: 0px !important;">or</span>
                                                     <a href=""
                                                        style="display: inline !important; padding: 0px !important;  margin-left: 8px;">
-                                                        <img src="{{ asset('footer_section') }}/images/app-store.svg"
+                                                        <img src="{{ my_asset('footer_section') }}/images/app-store.svg"
                                                              width="63px" alt="">
 
                                                     </a>
@@ -1429,7 +1429,7 @@
 
 <!-- kemedar top header js start -->
 <script src="https://kit.fontawesome.com/fc057e91f8.js" crossorigin="anonymous"></script>
-<script src="{{ asset('footer_section/js/app.js') }}"></script>
+<script src="{{ my_asset('footer_section/js/app.js') }}"></script>
 <!-- kemedar top header js end -->
 <script>
     window.addEventListener('DOMContentLoaded', function() {

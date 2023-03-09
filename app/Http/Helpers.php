@@ -152,25 +152,25 @@ if (!function_exists('getUserRole')) {
 }
 
 function getImageURL($image){
-  
+
      //$S3Client = S3Client::factory($profile_credentials);
      $S3Client = AWS::createClient('s3');
     // $S3Client = App::make('aws')->createClient('s3');
- 
+
      try {
- 
+
          $cmd = $S3Client->getCommand('GetObject', [
              'Bucket' => env('IDRIVE_BUCKET_NAME', 'kemedar-idrive'),
              'Key' =>  $image
          ]);
-    
+
          $request = $S3Client->createPresignedRequest($cmd, '+20 minutes');
- 
+
          // Get the actual presigned-url
          $presignedUrl = (string)$request->getUri();
          return $presignedUrl;
- 
- 
+
+
      } catch (AwsException $e) {
          echo $e->getMessage();
      }
