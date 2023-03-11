@@ -152,8 +152,9 @@
                                                         <a class="company_btn" href="http://kemework.com/search?keyword=&type=agent">Finishing Company</a>
                                                     </div>
                                                 </div>
+
                                                 @php
-                                                    $cata = \App\Models\ProjectCategory::all();
+                                                    $cata = \App\Models\ProjectCategory::orderBy('created_at', 'desc')->simplePaginate(40)
                                                 @endphp
                                                 <ul>
 
@@ -162,8 +163,12 @@
                                                                 <div class="row">
                                                                     <br>
                                                                     @foreach($cata as $catagory)
+
                                                                         <ul class="col-sm-3 list-unstyled">
-                                                                            <li class="subcat-li"><a href="">{{ $catagory->name }}</a></li>
+                                                                            <div class="list-group">
+                                                                                <li class=" subcat-li p-2"><a href="{{route('freelancer.category',$catagory->slug)}} ">{{ $catagory->name }}</a></li>
+                                                                            </div>
+
                                                                         </ul>
                                                                     @endforeach
                                                                 </div>

@@ -7,6 +7,7 @@
     }
     $lang = \App\Models\Language::where('code', $locale)->first();
 @endphp
+
 <!DOCTYPE html>
 
 @if($lang != null && $lang->rtl == 1)

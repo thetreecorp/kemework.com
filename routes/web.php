@@ -303,6 +303,7 @@ Route::get('/search', 'SearchController@index')->name('search');
 Route::get('/search?category={slug}', 'SearchController@index')->name('projects.category');
 Route::get('/skills/{skill}/{type}', 'SearchController@searchBySkill')->name('search.skill');
 Route::get('/search?category={category_slug}&type=service', 'SearchController@index')->name('services.category');
+Route::get('/search?category={category_slug}&type=freelancer', 'SearchController@index')->name('freelancer.category');
 Route::get('/test', 'SearchController@test');
 
 Route::get('/project/{slug}', 'HomeController@project_details')->name('project.details');
