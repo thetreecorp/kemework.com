@@ -45,4 +45,21 @@ class HomeController extends Controller
         return response::json($data,'200');
 
     }
+
+    public function slider(){
+        if(get_setting('sliders') != null){
+            foreach (explode(',', get_setting('sliders')) as $key => $value){
+                $data[] = custom_asset($value);
+            }
+        }
+
+       $data['slider_title'] = get_setting('slider_section_title');
+       $data['slider_subtitle'] = get_setting('slider_section_subtitle');
+        return response::json($data, '200');
+    }
+
+    public function letest_task(){
+        $data = Project::all()->sortDesc();
+        return response::json($data, '200');
+    }
 }
