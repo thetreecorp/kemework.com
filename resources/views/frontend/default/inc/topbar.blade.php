@@ -3,7 +3,7 @@
     use App\Models\Country;
     use App\Models\Language;
     use App\Models\Currency;
-    
+
     $continents = Cache::rememberForever('continents', function () {
         return Continent::where('active', 1)->get();
     });
@@ -126,7 +126,7 @@
 
                 </div>
             </div>
-            <div class="topbar-right">    
+            <div class="topbar-right">
                 <div class="flex gap-x-6 items-center">
 
                     <div class="relative group z-[500]">
@@ -185,8 +185,9 @@
                                             <div class="">
                                                 @php
                                                     $languages = Cache::rememberForever('languages', function () {
-                                                        return Language::where('enable', 1)->get();
+                                                        return \App\Models\Language::where('enable',1)->get();
                                                     });
+
                                                 @endphp
                                                 @if ($languages)
                                                     @foreach ($languages as $language)
@@ -489,7 +490,7 @@
                                                     <div class="text-center"><span>Buy-Sale Transaction</span></div>
                                                 </div>
                                             </div>
-                                        
+
                                             <div class="">
                                                 <div
                                                     class="flex bg-white hover:bg-yellow-400 justify-center gap-x-2 py-[8px] px-[10px] rounded-lg">
@@ -639,7 +640,7 @@
                                 <i class="icon-top-header-icons-signup"></i>
                             </a>
                             <!-- Signup Modal start -->
-                            
+
                             <!-- signup Modal end -->
                         </div>
                     @else
@@ -670,5 +671,5 @@
                 </div>
             </div>
         </div>
-    </div>            
-</div>    
+    </div>
+</div>
