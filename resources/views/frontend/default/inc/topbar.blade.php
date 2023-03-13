@@ -185,8 +185,9 @@
                                             <div class="">
                                                 @php
                                                     $languages = Cache::rememberForever('languages', function () {
-                                                        return Language::where('enable', 1)->get();
+                                                        return \App\Models\Language::where('enable',1)->get();
                                                     });
+
                                                 @endphp
                                                 @if ($languages)
                                                     @foreach ($languages as $language)
@@ -673,6 +674,8 @@
         </div>
     </div>
 </div>
+<<<<<<< HEAD
+=======
 
 
 
@@ -695,3 +698,4 @@
             });
     </script>
 
+>>>>>>> b8890da30bbfaea5eadba29628e859871ef2daeb
