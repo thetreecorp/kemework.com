@@ -674,28 +674,40 @@
         </div>
     </div>
 </div>
-<<<<<<< HEAD
-=======
 
 
 
 
+@section('kemework_javascript')
     <script>
-        $('#lang-change a').each(function() {
-            alert('vijvionn');
-                $(this).on('click', function(e) {
-                    e.preventDefault();
-                    var $this = $(this);
-                    var locale = $this.data('flag');
-                    $.post('{{ route('language.change') }}', {
-                        _token: '{{ csrf_token() }}',
-                        locale: locale
-                    }, function(data) {
-                        location.reload();
+         if ($('#lang-change').length > 0 || $('#collapanLanguage').length > 0) {
+            $('#lang-change a').click(function() {
+                    $(this).on('click', function(e) {
+                        e.preventDefault();
+                        var $this = $(this);
+                        var locale = $this.data('flag');
+
+                        $.ajax({
+                            url:"{{route('language.change')}}",
+                            method: "get",
+                            data: {
+                                'locale':locale
+                            },
+                            success: function (result) {
+                               // alert(JSON.stringify(result));
+                                location.reload();
+                            }, error: function(response) {
+                                //alert(JSON.stringify(response));
+                            }, beforeSend: function () {
+                                $('#loading').show();
+                            },complete: function () {
+                                $('#loading').hide();
+                            }
+                        });
+
                     });
-
                 });
-            });
+            };
     </script>
+@endsection
 
->>>>>>> b8890da30bbfaea5eadba29628e859871ef2daeb
