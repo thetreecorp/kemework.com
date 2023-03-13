@@ -59,8 +59,9 @@ class LanguageController extends Controller
         return view('admin.default.system_configurations.languages.index', compact('languages'));
     }
 
-    public function changeLanguage($locale)
+    public function changeLanguage(Request $request)
     {
+        return $request->locale;
         Session::put('locale', $locale);
         $language = Language::where('code', $locale)->first();
         flash(translate('Language changed to ') . $language->name)->success();

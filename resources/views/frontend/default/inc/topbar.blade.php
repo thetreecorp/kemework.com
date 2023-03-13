@@ -158,7 +158,7 @@
                                                                 <a href="javascript:void(0)"
                                                                     data-country="{{ $country->code }}"><img
                                                                         class="inline-flex h-[24px] w-[24px]"
-                                                                        src="{{ asset('images/flags/24/' . $country->code . '.png') }}" />
+                                                                        src="{{ asset('public/images/flags/24/' . $country->code . '.png') }}" />
                                                                     <p class="inline-flex text-[14px]">{{ $country->name }} </p>
                                                                 </a>
                                                             </div>
@@ -195,9 +195,10 @@
                                                             class="flex hover:bg-yellow-400 justify-start items-center gap-x-2 px-[5px] py-[5px] rounded-lg @if ($language->code == $locale) border-red-500 border-2 rounded-full @endif">
                                                             <a href="javascript:void(0)" data-flag="{{ $language->code }}">
                                                                 <img class="inline-flex h-[24px] w-[24px]"
-                                                                    src="{{ asset('images/flags/24/' . $language->code . '.png') }}" />
-                                                                <span
-                                                                    class="inline-flex text-[14px] whitespace-nowrap">{{ $language->name }}</span>
+                                                                    src="{{ asset('public/images/flags/24/' . $language->code . '.png') }}" />
+                                                                <span class="inline-flex text-[14px] whitespace-nowrap">
+                                                                    {{ $language->name }}
+                                                                </span>
                                                             </a>
                                                         </div>
                                                     @endforeach
@@ -673,3 +674,28 @@
         </div>
     </div>
 </div>
+<<<<<<< HEAD
+=======
+
+
+
+
+    <script>
+        $('#lang-change a').each(function() {
+            alert('vijvionn');
+                $(this).on('click', function(e) {
+                    e.preventDefault();
+                    var $this = $(this);
+                    var locale = $this.data('flag');
+                    $.post('{{ route('language.change') }}', {
+                        _token: '{{ csrf_token() }}',
+                        locale: locale
+                    }, function(data) {
+                        location.reload();
+                    });
+
+                });
+            });
+    </script>
+
+>>>>>>> b8890da30bbfaea5eadba29628e859871ef2daeb
