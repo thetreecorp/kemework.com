@@ -3,7 +3,7 @@
     use App\Models\Country;
     use App\Models\Language;
     use App\Models\Currency;
-    
+
     $continents = Cache::rememberForever('continents', function () {
         return Continent::where('active', 1)->get();
     });
@@ -126,7 +126,7 @@
 
                 </div>
             </div>
-            <div class="topbar-right">    
+            <div class="topbar-right">
                 <div class="flex gap-x-6 items-center">
 
                     <div class="relative group z-[500]">
@@ -158,7 +158,7 @@
                                                                 <a href="javascript:void(0)"
                                                                     data-country="{{ $country->code }}"><img
                                                                         class="inline-flex h-[24px] w-[24px]"
-                                                                        src="{{ asset('images/flags/24/' . $country->code . '.png') }}" />
+                                                                        src="{{ asset('public/images/flags/24/' . $country->code . '.png') }}" />
                                                                     <p class="inline-flex text-[14px]">{{ $country->name }} </p>
                                                                 </a>
                                                             </div>
@@ -194,9 +194,10 @@
                                                             class="flex hover:bg-yellow-400 justify-start items-center gap-x-2 px-[5px] py-[5px] rounded-lg @if ($language->code == $locale) border-red-500 border-2 rounded-full @endif">
                                                             <a href="javascript:void(0)" data-flag="{{ $language->code }}">
                                                                 <img class="inline-flex h-[24px] w-[24px]"
-                                                                    src="{{ asset('images/flags/24/' . $language->code . '.png') }}" />
-                                                                <span
-                                                                    class="inline-flex text-[14px] whitespace-nowrap">{{ $language->name }}</span>
+                                                                    src="{{ asset('public/images/flags/24/' . $language->code . '.png') }}" />
+                                                                <span class="inline-flex text-[14px] whitespace-nowrap">
+                                                                    {{ $language->name }}
+                                                                </span>
                                                             </a>
                                                         </div>
                                                     @endforeach
@@ -489,7 +490,7 @@
                                                     <div class="text-center"><span>Buy-Sale Transaction</span></div>
                                                 </div>
                                             </div>
-                                        
+
                                             <div class="">
                                                 <div
                                                     class="flex bg-white hover:bg-yellow-400 justify-center gap-x-2 py-[8px] px-[10px] rounded-lg">
@@ -639,7 +640,7 @@
                                 <i class="icon-top-header-icons-signup"></i>
                             </a>
                             <!-- Signup Modal start -->
-                            
+
                             <!-- signup Modal end -->
                         </div>
                     @else
@@ -670,5 +671,27 @@
                 </div>
             </div>
         </div>
-    </div>            
-</div>    
+    </div>
+</div>
+
+
+
+
+    <script>
+        $('#lang-change a').each(function() {
+            alert('vijvionn');
+                $(this).on('click', function(e) {
+                    e.preventDefault();
+                    var $this = $(this);
+                    var locale = $this.data('flag');
+                    $.post('{{ route('language.change') }}', {
+                        _token: '{{ csrf_token() }}',
+                        locale: locale
+                    }, function(data) {
+                        location.reload();
+                    });
+
+                });
+            });
+    </script>
+

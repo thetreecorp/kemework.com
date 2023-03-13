@@ -52,7 +52,7 @@ Route::get('/social-login/redirect/{provider}', 'Auth\LoginController@redirectTo
 Route::get('/social-login/{provider}/callback', 'Auth\LoginController@handleProviderCallback')->name('social.callback');
 
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
-Route::get('/language/{locale}', 'LanguageController@changeLanguage')->name('language.change');
+Route::get('/language/change', 'LanguageController@changeLanguage')->name('language.change');
 
 Route::get('/package-select', 'PackageController@select_package')->name('select_package');
 Route::get('/check', 'UserController@userOnlineStatus');
