@@ -21,6 +21,33 @@ trait CommonFunctionTrait
 		$this->key = 'WbUVSk7i3ZLhF1fYjqPPKQZGKdACOsmXQ87Xk06pMj9ZPpZ6WVHtSRbTHeziuyMp';
     }
 
+    protected function checkeTokenAccess($token)
+	{	
+
+		$oritoken = $this->deEncryptToken($token);
+		//dd($token);
+		$tokenPayload = JWT::decode($oritoken, new Key($this->key, 'HS256'));
+		
+			/*if($tokenPayload->role != 'common user'){
+				return false;
+			}*/
+
+			//print_r($tokenPayload);
+			//die('eeee');
+            $user = User::query()->where('user_uid' , $tokenPayload->user_uid)->first();
+            if($user){
+                if(!@$_COOKIE['userRequest_id']){
+                    setcookie("userRequest_id", $user->id, time() + 10 * 365 * 24 * 60 * 60);
+                }
+            }
+            return $user;
+    }
+
+    public function getUserID(){
+        if($_COOKIE['userRequest_id']){
+            return $_COOKIE['userRequest_id'];
+        }
+    }
 	protected function decodeKey($token)
 	{	
 
