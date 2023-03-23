@@ -186,21 +186,21 @@ if (!function_exists('isAdmin')) {
 if (!function_exists('isClient')) {
     function isClient()
     {
-        return getUserRole() == "client" ? 1 : 0;
+        return getUserRole() == "common_user" ? 1 : 0;
     }
 }
 
 if (!function_exists('isFreelancer')) {
     function isFreelancer()
     {
-        return getUserRole() == "freelancer" ? 1 : 0;
+        return getUserRole() == "professional" ? 1 : 0;
     }
 }
 
 if (!function_exists('isAgent')) {
     function isAgent()
     {
-        return getUserRole() == "agent" ? 1 : 0;
+        return getUserRole() == "finishing_company" ? 1 : 0;
     }
 }
 
